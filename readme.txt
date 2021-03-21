@@ -14,7 +14,7 @@ Chrome 4.0, Internet Explorer 9.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0
 
 Size of the current version (file CompactDOM.min.js) 6.5Kb
 
-After loading the library, the following sintaxic construction (Backus-Naur-Form) becomes available:
+After loading the library, the following syntax construction (Backus-Naur-Form) becomes available:
 
 _(<selector>).<method>([<parameter>[, <parameter>[, ... <parameter>]]])[.<property>];
 
