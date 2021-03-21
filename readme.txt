@@ -871,7 +871,7 @@ append:[
 ]
 
 d.
-<data>::<string|null>
+<data>::=<string|null>
 
 d.1
 If the "post" method is specified and the "date" property is not defined,
