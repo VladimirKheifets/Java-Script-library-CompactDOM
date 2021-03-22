@@ -34,7 +34,7 @@ echo <<<HTML
 <title>Demo Java Script library CompactDOM</title>
 <link rel="stylesheet" href="modal.css">
 <link rel="stylesheet" href="index.css">
-<script type="text/javascript" src="CompactDOM.js"></script>
+<script type="text/javascript" src="CompactDOM.min.js"></script>
 HTML;
 ?>
 <script type="text/javascript" language="JavaScript">
