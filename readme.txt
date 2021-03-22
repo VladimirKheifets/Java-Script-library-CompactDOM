@@ -5,7 +5,9 @@ Version: 1.2, 2021-03-20
 Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
 Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
 
-	
+Demo:
+https://www.alto-booking.com/demo/github/CompactDOM/
+
 The library helps to access the DOM elements,provides the ability 
 to access the attributes and content of elements and manipulate elements.
 
