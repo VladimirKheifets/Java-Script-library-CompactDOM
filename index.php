@@ -34,47 +34,43 @@ echo <<<HTML
 <title>Demo Java Script library CompactDOM</title>
 <link rel="stylesheet" href="modal.css">
 <link rel="stylesheet" href="index.css">
-<script type="text/javascript" src="CompactDOM.min.js"></script>
+<script type="text/javascript" src="CompactDOM.js"></script>
 HTML;
 ?>
 <script type="text/javascript" language="JavaScript">
 start=function()
-{
-	test1 = function(){
+{	
+    test = [];
+	test[1] = function(){
 		_().send("?la=en"); //redirect
 	}
 	
-	test2 = function(){
+	test[2] = function(){
 		_().send(); //submit default form
 	}
 
-	test3 = function(){
+	test[3] = function(){
 		_("#a").attribute("action","?t=3");//set action 
 		_("#a").send(); //submit form id = "a"
 	}	
 
-	test4 = function(){
+	test[4] = function(){
 		attr={url:"?t=4",to:"#b"};
 		_().send(attr)
 		_(attr.to).display(__.dtc);
 	}
 
-	test5 = function(){
+	test[5] = function(){
 		attr={url:"?t=5",to:"#modal",func:viewModal};
 		_().send(attr);
 	}
 
-	test6 = function(){		
+	test[6] = function(){		
 		attr={url:"?sel=1",to:"#continents",func:createSelect};
 		_().send(attr);
 	}
 
-	_("#test1").click(test1);
-	_("#test2").click(test2);
-	_("#test3").click(test3);
-	_("#test4").click(test4);
-	_("#test5").click(test5);
-	_("#test6").click(test6);	
+	for(i in test) _("#test"+i).click(test[i]);
 	
 	_().modal();	
 	_("#modal_content").click();
