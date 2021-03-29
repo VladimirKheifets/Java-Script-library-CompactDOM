@@ -1,6 +1,6 @@
 Java Script library CompactDOM 
 
-Version: 1.2.1, 2021-03-20
+Version: 1.2.1, 2021-03-29
 
 Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
 Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
