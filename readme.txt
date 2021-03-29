@@ -5,16 +5,14 @@ Version: 1.2, 2021-03-20
 Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
 Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
 
-Demo:
-https://www.alto-booking.com/demo/github/CompactDOM/
-
+	
 The library helps to access the DOM elements,provides the ability 
 to access the attributes and content of elements and manipulate elements.
 
 Browser support: 
 Chrome 4.0, Internet Explorer 9.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0
 
-Size of the current version (file CompactDOM.min.js) 6.5Kb
+Size of the current version (file CompactDOM.min.js) 6.9Kb
 
 After loading the library, the following syntax construction (Backus-Naur-Form) becomes available:
 
@@ -23,7 +21,7 @@ _(<selector>).<method>([<parameter>[, <parameter>[, ... <parameter>]]])[.<proper
 <selector> :: = <null> | <object element DOM> | <string CSS Selector>
 
 <method> :: = "attribute"|"change"|"checked"|"class"|"click"|"content"|"display"|
-"keydown"|"keyup"|"load"|"modal"|"position"|"scroll"|"selected"|"send"|"style"|"value"
+"keydown"|"keyup"|"load"|"modal"|"position"|"scroll"|"selected"|"send"|"style"|"resize|"value"
 
 <parameter> :: = <null> | <number> | <string>
 <property> :: = "el"|"top"|"left"|"right"|"bottom"|"width"|"height"
@@ -47,32 +45,28 @@ h_function = function(){
 
 _("#test1").event("click", h_function);
 
-1.1 Methods -  click, change, keydown, keyup, scroll, load.
+1.1.1 Methods -  click, change, keydown, keyup, load.
 		
+_(<selector>|null).load(<handler function>);
 _(<selector>).click(<handler function>);
+_(<selector>).change(<handler function>);
+_(<selector>).keydown.(<handler function>);
+_(<selector>).keydown.(<handler function>);
+_(<selector>).keyup(<handler function>);
+
+If for the "load" method <selector> is not defined, then the default <selector> is "window".
+Example:
+
+_().load(h_function);
+//Equivalent to:
+_(window).load(h_function);
+ 
 
 Example, element id="test1":
 
 _("#test1").click(function(){console.log("click")});
-
 or
-
 _("#test1").click(h_function);
-
-
-If <selector> is not defined, then: 
-for the "scroll" method the default <selector> is "document", 
-for the "load" method the default <selector> is "window", 
-
-Example:
-
-_().scroll();
-//Equivalent to:
-_(document).scroll(h_function);
-
-_().load();
-//Equivalent to:
-_(window).load(h_function);
 
 Attention!
 If <selector> defines a DOM element - NodeList (DOMElement.length> 0),
@@ -86,7 +80,48 @@ html:
 <input type="radio" value=3>
 
 js CompactDOM:
+
 _("input[type='radio']").change(function(e){console.log(e.target.value)});
+
+1.1.2 Methods - "scroll".
+
+a. Only handler events "scroll"
+
+_(<selector>|null).scroll(<handler function>|null);
+
+If <selector> is not defined, then for the "scroll" method the default <selector> is "document".
+
+Example:
+
+_().scroll(function(){console.log("Now you have moved the scroll"));
+or 
+_().scroll(h_function));
+
+_().scroll(h_function);
+//Equivalent to:
+_(document).load(h_function);
+
+b. Create create element scrollup and scroll events handler.
+
+If the parameter is not specified, then the method creates an element 
+to control the scrolling.
+The method handles the scroll event and this element becomes visible 
+if the scrolling height exceeds the browser height.
+The method handles the click event for this element and sets scroll Y to 0. 
+If <selector> is not defined, then the default <selector> is "#scrollup" (id="scrollup").
+See CSS See below in Append 2.
+
+_(<selector>|null).scroll(null);
+
+Example:
+
+_().scroll();
+
+html:
+
+<div id="scrollup"  title="Top">
+<div class="arrow">&#10094;</div>
+</div>
 
 
 2. Methods for getting and setting properties.
@@ -825,7 +860,7 @@ _().send();
 
 <selector>::=<null|form-selector> (see section 2.2 above)
 <parametr>:: = <object>
-<object properties> ::= <url|method|append|data|func|to>
+<object properties> ::= <url|method|append|data|func|to|debug>
 
 a.
 <url>::=<string url of ajax-request|null>
@@ -950,6 +985,19 @@ Example:
 obj={url:"?t=5",to:"#modal"};
 _().send(obj);
 
+e.
+<debug>::=<1|true>
+If this debug property is defined, then information is displayed in the console.
+console.log({rsp:rsp,to:to,func:func,url:url})  
+
+Example:
+obj={url:"?t=5",to:"#modal",debug:1};
+_().send(obj);
+
+Attention!
+If this property is undefined, but errors are detected in the PHP code, 
+the information in the console is also displayed. 
+
 2.12 Method "modal" *
 
 The "modal" method creates html tags for the modal window.
@@ -997,6 +1045,43 @@ test5 = function(){
 }
 
 _("#test5").click(test5);
+
+2.13 Method "resize"
+
+_(<selector>).resize(<null|number padding-bottom in pixel);
+
+This method automatically changes the height of the content elements 
+so that the content is displayed completely without vertical scrolling. 
+If the parameter is specified, then the automatically calculated 
+height is added to the specified value. 
+
+html:
+
+<style>
+	textarea{
+	width:100%;
+	height:0px;
+	padding:10 10 0 10;
+	overflow:hidden;
+}
+</style>
+
+<textarea>content 1</textarea>
+<textarea>content 2</textarea>
+<textarea>content 3</textarea>
+<textarea>content 4</textarea>
+
+js CompactDOM:
+
+_("textarea").resize();
+
+_("textarea").resize(10); 
+
+_("textarea").change(function(e){
+	el=e.target;
+	_(el).resize();
+	}
+); 
 
 
 3. Auxiliary methods not related to elements of HTML DOM.
@@ -1260,3 +1345,41 @@ Append 1. CSS for method "modal".
 		background: rgba(0, 0, 0, 0.1);
 		display:none;	
 	}
+	
+Append 2. CSS for method "scroll" without parametr
+(create element scrollup and scroll events handler)
+
+#scrollup {
+	position: fixed;
+	opacity: 0.5;	
+	background: rgba(170, 170, 170, 0.6);
+	caret-color: transparent;
+	caret-color: rgba(170, 170, 170, 0.6); 
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	bottom: 20px;
+	left:20px;
+	display: none;
+	width:40px;
+	height:40px;		
+	cursor: pointer;	
+	z-index:9999;
+}
+#scrollup .arrow{
+	font-size:30px;	
+	position:fixed;	
+	font-weight:normal;    
+	margin-left:14px;
+	margin-top:-2px;	
+	transform: rotate(90deg); 
+	color:#FFFFFF; 
+	caret-color: transparent;
+	caret-color: rgba(170, 170, 170, 0.6); 
+}
+
+#scrollup:hover{
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}	
+	
