@@ -1050,7 +1050,7 @@ _("#test5").click(test5);
 
 _(<selector>).resize(<null|number padding-bottom in pixel);
 
-This method automatically changes the height of the content elements 
+This method automatically changes the height of the elements
 so that the content is displayed completely without vertical scrolling. 
 If the parameter is specified, then the automatically calculated 
 height is added to the specified value. 
