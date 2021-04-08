@@ -1,14 +1,14 @@
-//CompactDOM script
+//CompactDOM demo script
 
 start=function()
 {	
     test = [];
 	test[1] = function(){
-		_().send("?la=en"); //redirect
+		__.send("?la=en"); //redirect
 	}
 	
 	test[2] = function(){
-		_().send(); //submit default form
+		__.send(); //submit default form
 	}
 
 	test[3] = function(){
@@ -18,27 +18,25 @@ start=function()
 
 	test[4] = function(){
 		attr={url:"?t=4",to:"#b"};
-		_().send(attr)
+		__.send(attr)
 		_(attr.to).display(__.dtc);
 	}
 
 	test[5] = function(){
 		attr={url:"?t=5",to:"#modal",func:viewModal};
-		_().send(attr);
+		__.send(attr);
 	}
 
 	test[6] = function(){		
 		attr={url:"?sel=1",to:"#continents",func:createSelect};
-		_().send(attr);
+		__.send(attr);
 	}
 
 	for(i in test) _("#test"+i).click(test[i]);
 	
-	_().modal();	
-	_("#modal_content").click();
-				
+	__.modal();					
 }
-_().load(start);
+__.load(start);
 
 testF = function (rsp,to,url){
 	alert(rsp+"\n"+to+"\n"+url);

@@ -1,8 +1,8 @@
 Java Script library CompactDOM 
 
-Version: 1.2.1, 2021-03-29
+Version: 1.2.2, 2021-04-08
 
-Author: Vladimir Kheifets (vladimir.kheifets@online.de)	
+Author: Vladimir Kheifets (kheifets.vladimir@online.de)	
 Copyright (c) 2021 Vladimir Kheifets All Rights Reserved
 
 	
@@ -12,10 +12,11 @@ to access the attributes and content of elements and manipulate elements.
 Browser support: 
 Chrome 4.0, Internet Explorer 9.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0
 
-Size of the current version (file CompactDOM.min.js) 6.9Kb
+Size of the current version (file CompactDOM.min.js) 7.3Kb
 
 Demo:
 https://www.alto-booking.com/demo/github/CompactDOM/
+https://www.alto-booking.com/demo/github/CaesarCipher/
 
 After loading the library, the following syntax construction (Backus-Naur-Form) becomes available:
 
@@ -23,8 +24,12 @@ _(<selector>).<method>([<parameter>[, <parameter>[, ... <parameter>]]])[.<proper
 
 <selector> :: = <null> | <object element DOM> | <string CSS Selector>
 
-<method> :: = "attribute"|"change"|"checked"|"class"|"click"|"content"|"display"|
-"keydown"|"keyup"|"load"|"modal"|"position"|"scroll"|"selected"|"send"|"style"|"resize|"value"
+In some cases, when calling a method, it is allowed not to specify a selector (null) and instead
+of opening and closing parentheses, you can write one underscore character.
+_().<metod>(...) equivalent to:  __.<metod>(...)
+
+<method> :: = "attribute"|"change"|"checked"|"class"|"click"|"content"|"create"|display"|
+"keydown"|"keyup"|"load"|"modal"|"position"|"reload"|"resize"|"scroll"|"selected"|"send"|"style"|"value"
 
 <parameter> :: = <null> | <number> | <string>
 <property> :: = "el"|"top"|"left"|"right"|"bottom"|"width"|"height"
@@ -48,11 +53,10 @@ h_function = function(){
 
 _("#test1").event("click", h_function);
 
-1.1.1 Methods -  click, change, keydown, keyup, load.
+1.1.1 Methods -  "click", "keydown", "keyup", "load".
 		
 _(<selector>|null).load(<handler function>);
 _(<selector>).click(<handler function>);
-_(<selector>).change(<handler function>);
 _(<selector>).keydown.(<handler function>);
 _(<selector>).keydown.(<handler function>);
 _(<selector>).keyup(<handler function>);
@@ -60,7 +64,8 @@ _(<selector>).keyup(<handler function>);
 If for the "load" method <selector> is not defined, then the default <selector> is "window".
 Example:
 
-_().load(h_function);
+__.load(h_function);
+
 //Equivalent to:
 _(window).load(h_function);
  
@@ -70,6 +75,80 @@ Example, element id="test1":
 _("#test1").click(function(){console.log("click")});
 or
 _("#test1").click(h_function);
+
+Attention!
+If <selector> defines a DOM element - NodeList (DOMElement.length> 0),
+then all methods set up event handlers for all elements of the NodeList. 
+
+1.1.2 Methods - "scroll".
+
+a. Only handler events "scroll"
+
+_(<selector>|null).scroll(<handler function>|null);
+
+If <selector> is not defined, then for the "scroll" method the default <selector> is "document".
+
+Example:
+
+__.scroll(function(){console.log("Now you have moved the scroll"));
+or 
+__.scroll(h_function));
+
+//Equivalent to:
+_(document).load(h_function);
+
+b. Create element scrollup and scroll events handler.
+
+If the parameter is not specified, then the method creates an element 
+to control the scrolling.
+The method handles the scroll event and this element becomes visible 
+if the scrolling height exceeds the browser height.
+The method handles the click event for this element and sets scroll Y to 0. 
+If <selector> is not defined, then the default <selector> is "#scrollup" (id="scrollup").
+See CSS See below in Append 2.
+
+_(<selector>|null).scroll(null);
+
+Example:
+
+__.scroll();
+
+html:
+
+<div id="scrollup"  title="Top">
+<div class="arrow">&#10094;</div>
+</div>
+
+1.1.3 Method "change".
+
+_(<selector>|null).change(null|h_function|h_function1,h_function1);
+
+If no selector is specified, then the default selector is window 
+
+a. Method "change" for the window object.
+
+__(window).change(null|h_function|h_function1, h_function1);
+
+or
+__().change(null|h_function|h_function1, h_function1);
+
+or
+__.change(null|h_function|h_function1, h_function1); 
+
+This method checks if the browser supports the type of event "orientationchange".
+If supported, the "orientationchange" type is used in the event handler, 
+otherwise the "resize" type. 
+
+If the handler function is not specified, the "reload" method will be used 
+(see section 2.14 below) 
+If only one handler function is specified, then it will be applied 
+for the "resize" event type and for the "orientationchange" event.
+If two handler functions are specified, the first will be applied for 
+the "resize" event type, and the second for the "orientationchange" event type. 
+
+b. Method "change" for the elements.
+
+_(<selector>).change(h_function);
 
 Attention!
 If <selector> defines a DOM element - NodeList (DOMElement.length> 0),
@@ -86,46 +165,9 @@ js CompactDOM:
 
 _("input[type='radio']").change(function(e){console.log(e.target.value)});
 
-1.1.2 Methods - "scroll".
-
-a. Only handler events "scroll"
-
-_(<selector>|null).scroll(<handler function>|null);
-
-If <selector> is not defined, then for the "scroll" method the default <selector> is "document".
-
-Example:
-
-_().scroll(function(){console.log("Now you have moved the scroll"));
-or 
-_().scroll(h_function));
-
-_().scroll(h_function);
-//Equivalent to:
-_(document).load(h_function);
-
-b. Create create element scrollup and scroll events handler.
-
-If the parameter is not specified, then the method creates an element 
-to control the scrolling.
-The method handles the scroll event and this element becomes visible 
-if the scrolling height exceeds the browser height.
-The method handles the click event for this element and sets scroll Y to 0. 
-If <selector> is not defined, then the default <selector> is "#scrollup" (id="scrollup").
-See CSS See below in Append 2.
-
-_(<selector>|null).scroll(null);
-
-Example:
-
-_().scroll();
-
-html:
-
-<div id="scrollup"  title="Top">
-<div class="arrow">&#10094;</div>
-</div>
-
+If the selector defines an "input" element with an attribute of type "text",
+then the event handler is set to the type of the "input" event. 
+In all other cases, the event type is set to "change".
 
 2. Methods for getting and setting properties.
 
@@ -231,7 +273,7 @@ val =_("#inp1").value();
 console.log(val); //200
 
 
-2.6 Method - checked *.
+2.6 Method "checked" *.
 
 This method is applicable only for radiobutton and checkbox elements.
 
@@ -833,7 +875,7 @@ _(<selector|null>).send(<parametr>);
 <parametr>::=  <string webpage URL>
 
 Example:
-_().send("?la=en");
+__.send("?la=en");
 
 2.11.2 Submit a form.
 
@@ -857,7 +899,7 @@ form1.send(); //Submit form with id="form1";
 
 Example submit  tag form.
 
-_().send(); 
+__.send(); 
 
 2.11.3 Sends data over XMLHttpRequest (Ajax).
 
@@ -977,7 +1019,7 @@ myFunction = function(rsp, to, url){
 };
 
 obj={url:"?t=5",to:"#modal",func:myFunction};
-_().send(obj);
+__.send(obj);
 
 f.2
 If the "func" property is undefined, then  ajax-response will be inserted
@@ -986,7 +1028,7 @@ into the element whose selector was defined in the "to" property(see e. above)
 Example:
 
 obj={url:"?t=5",to:"#modal"};
-_().send(obj);
+__.send(obj);
 
 e.
 <debug>::=<1|true>
@@ -995,7 +1037,7 @@ console.log({rsp:rsp,to:to,func:func,url:url})
 
 Example:
 obj={url:"?t=5",to:"#modal",debug:1};
-_().send(obj);
+__.send(obj);
 
 Attention!
 If this property is undefined, but errors are detected in the PHP code, 
@@ -1017,7 +1059,7 @@ See CSS See below in Append 1.
 
 a. Example. Create modal with default selector id="#modal"
 
-_().modal();
+__.modal();
 console.log(_("body").content());
 
 /*	
@@ -1044,7 +1086,7 @@ viewModal = function(rsp, to)
 
 test5 = function(){
 	attr={url:"?t=5",to:"#modal",func:viewModal};
-	_().send(attr);
+	__.send(attr);
 }
 
 _("#test5").click(test5);
@@ -1084,7 +1126,13 @@ _("textarea").change(function(e){
 	el=e.target;
 	_(el).resize();
 	}
-); 
+);
+
+2.14 Method "reload".
+
+This method reloads the current URL
+
+__.reload(); 
 
 
 3. Auxiliary methods not related to elements of HTML DOM.
@@ -1248,7 +1296,7 @@ console.log( url);
 	__.und=undefined
 
 	Method __.env()
-	Propertis:  body, wbr, hbr, wsc, hsc, dpr
+	Propertis:  wbr, hbr, wsc, hsc, dpr, sor, eor
 	
 	Element body:
 	__.env().body 
@@ -1264,6 +1312,13 @@ console.log( url);
 
 	Ratio of the resolution in pixels for display device:
 	__.env().dpr
+
+	Supports change of orientationChange event: true|false
+	__.env().sor  return:true|false
+	
+	Event name for window change (see section 1.1.3 above)
+	__.env().eor	return: "orientationchange"|"resize"	
+
 	
 	a. Example __.pc:
 	
