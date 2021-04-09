@@ -12,7 +12,7 @@ to access the attributes and content of elements and manipulate elements.
 Browser support: 
 Chrome 4.0, Internet Explorer 9.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0
 
-Size of the current version (file CompactDOM.min.js) 7.3Kb
+Size of the current version (file CompactDOM.min.js) 7.5Kb
 
 Demo:
 https://www.alto-booking.com/demo/github/CompactDOM/
@@ -1207,10 +1207,43 @@ console.log(out); //Array(5) [ "second", "parameter", "is", "an", "array" ]
 
 3.2 Method "url".
 
-<out>=__.url(<string url>,<string|number>);
-The first parameter is string url.
+<out>=__.url(<string url|object>,<string|number>);
 
-a. The second parameter is string.
+a. The first parameter. 
+a.1 The first parameter is string url.
+a.2 The first parameter is object.
+<object> ::= window|document|form DOMelement
+
+a.2.1 The first parameter is window
+In this case, url is defined as window.location.href
+
+Example a.2.1:
+
+url = __.url(window);
+
+a.2.2 The first parameter is document or form-DOMElement.
+
+If the object is document, then url is defined as document.forms[0].action
+In this case, url is defined as objectForm.action 
+If the object is form-DOMElement, then url is defined as DOMElement.action. 
+
+Example a.2.2:
+url = __.url(document);
+url = __.url(document.forms.test);
+f = __("form[name='test']");
+url = __.url(f);
+
+
+b. The second parameter
+
+b.1 The second parameter is undefined
+In this case, the method returns url
+
+Example b.1: 
+url = __.url(window); // Equivalent to window.location.href in java script.
+url = __.url(document); // Equivalent to document.forms[0].action in java script.
+ 
+b.2 The second parameter is string.
 
 <data>::=<name=value>[&<name=value>...]
 
@@ -1221,7 +1254,7 @@ in parameter of function is checked.
 If the names of the get-parameters match, then values in the first parameter of function
 replaced with the values of the  get-parameters from the second parameter of function.
 
-Example a:
+Example b.2:
 
 url="https://www.alto-booking.com/demo/timeCalculator/abc.php?a=1&b=2";
 data="a=5&d=f";
@@ -1229,7 +1262,7 @@ console.log( __.url(url, data));
 //https://www.alto-booking.com/demo/timeCalculator/abc.php?a=5&b=2&d=f
 
 
-a. The second parameter is number.
+b.3 The second parameter is number.
 
 if value is 0, then method returns base name of url.
 if value is 1, then method returns object get-parameters of url:
@@ -1249,12 +1282,13 @@ if value is 2, then method returns array:
 	}
 ]
 
-Example b:
+Example b3:
 
 url="https://www.alto-booking.com/demo/timeCalculator/abc.php?a=1&b=2";
 console.log( __.url(url,0)); //abc.php
 console.log( __.url(url,1)); //Object { a: "1", b: "2" }
 console.log( __.url(url,2)); //Array [ "abc.php", {a: "1", b: "2"} ]
+
 
 3.3  Method "sid".
 
