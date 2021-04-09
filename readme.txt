@@ -1224,8 +1224,7 @@ url = __.url(window);
 a.2.2 The first parameter is document or form-DOMElement.
 
 If the object is document, then url is defined as document.forms[0].action
-In this case, url is defined as objectForm.action 
-If the object is form-DOMElement, then url is defined as DOMElement.action. 
+If the object is form-DOMElement, then url is defined as DOMElement.action 
 
 Example a.2.2:
 url = __.url(document);
