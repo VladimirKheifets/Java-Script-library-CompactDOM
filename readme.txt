@@ -29,7 +29,7 @@ In some cases, when calling a method, it is allowed not to specify a selector (n
 of opening and closing parentheses, you can write one underscore character.
 _().<metod>(...) equivalent to:  __.<metod>(...)
 If <selector> defines an HTMLCollection object, then all methods marked with (*) 
-set up event handlers for array-like list (collection) of HTML elements.
+are applied for array-like list (collection) of HTML elements.
 
 <method> :: = "attribute"|"change"|"checked"|"class"|"click"|"content"|"create"|display"|
 "keydown"|"keyup"|"load"|"modal"|"position"|"reload"|"resize"|"scroll"|"selected"|"send"|"style"|"value"
