@@ -80,7 +80,7 @@ or
 _("#test1").click(h_function);
 
 
-1.1.2 Methods - "scroll".
+1.1.2 Method - "scroll".
 
 a. Only handler events "scroll"
 
