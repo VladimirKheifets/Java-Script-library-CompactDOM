@@ -77,8 +77,8 @@ or
 _("#test1").click(h_function);
 
 Attention!
-If <selector> defines a DOM element - NodeList (DOMElement.length> 0),
-then all methods set up event handlers for all elements of the NodeList. 
+If <selector> defines an HTMLCollection object, then all methods marked with (*) 
+set up event handlers for array-like list (collection) of HTML elements. 
 
 1.1.2 Methods - "scroll".
 
