@@ -1,0 +1,33 @@
+#scrollup {
+	position: fixed;
+	opacity: 0.5;	
+	background: rgba(170, 170, 170, 0.6);
+	caret-color: transparent;
+	caret-color: rgba(170, 170, 170, 0.6); 
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	bottom: 20px;
+	left:20px;
+	display: none;
+	width:40px;
+	height:40px;		
+	cursor: pointer;	
+	z-index:9999;
+}
+#scrollup .arrow{
+	font-size:30px;	
+	position:fixed;	
+	font-weight:normal;    
+	margin-left:14px;
+	margin-top:-2px;	
+	transform: rotate(90deg); 
+	color:#FFFFFF; 
+	caret-color: transparent;
+	caret-color: rgba(170, 170, 170, 0.6); 
+}
+
+#scrollup:hover{
+	opacity:0.8;
+	filter:alpha(opacity=80);
+}
