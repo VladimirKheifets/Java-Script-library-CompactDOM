@@ -24,9 +24,12 @@ _(<selector>).<method>([<parameter>[, <parameter>[, ... <parameter>]]])[.<proper
 
 <selector> :: = <null> | <object element DOM> | <string CSS Selector>
 
+Attention!
 In some cases, when calling a method, it is allowed not to specify a selector (null) and instead
 of opening and closing parentheses, you can write one underscore character.
 _().<metod>(...) equivalent to:  __.<metod>(...)
+If <selector> defines an HTMLCollection object, then all methods marked with (*) 
+set up event handlers for array-like list (collection) of HTML elements.
 
 <method> :: = "attribute"|"change"|"checked"|"class"|"click"|"content"|"create"|display"|
 "keydown"|"keyup"|"load"|"modal"|"position"|"reload"|"resize"|"scroll"|"selected"|"send"|"style"|"value"
@@ -76,9 +79,6 @@ _("#test1").click(function(){console.log("click")});
 or
 _("#test1").click(h_function);
 
-Attention!
-If <selector> defines an HTMLCollection object, then all methods marked with (*) 
-set up event handlers for array-like list (collection) of HTML elements. 
 
 1.1.2 Methods - "scroll".
 
@@ -146,13 +146,9 @@ for the "resize" event type and for the "orientationchange" event.
 If two handler functions are specified, the first will be applied for 
 the "resize" event type, and the second for the "orientationchange" event type. 
 
-b. Method "change" for the elements.
+b. Method "change" for the elements *.
 
 _(<selector>).change(h_function);
-
-Attention!
-If <selector> defines a DOM element - NodeList (DOMElement.length> 0),
-then all methods set up event handlers for all elements of the NodeList. 
 
 Example:
 
