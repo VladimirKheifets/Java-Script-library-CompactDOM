@@ -133,9 +133,9 @@ use of this library.
 
 You can see several projects implemented with CompactDOM:
 
- [https://www.alto-booking.com/developer/timecalculator/](https://www.alto-booking.com/developer/timecalculator/)
+ [https://www.alto-booking.com/developer/timecalculator/](https://www.alto-booking.com/developer/timecalculator/){:target="_blank"}
 
- [https://www.alto-booking.com/developer/caesarcipher/](https://www.alto-booking.com/developer/caesarcipher/)
+ [https://www.alto-booking.com/developer/caesarcipher/](https://www.alto-booking.com/developer/caesarcipher/){:target="_blank"}
 
 Compact DOM codes from these projects you can see in appendixs: *CaesarCipher.js*, *timeCalculator.js*.
 
