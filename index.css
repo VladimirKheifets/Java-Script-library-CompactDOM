@@ -1,9 +1,0 @@
-button{width:200px;padding:10px}
-body{font-size:14px;font-family:arial}	
-h2{font-weight:normal}
-h2 + div{font-size:18px;padding-bottom: 20px} 
-select{font-size: 16px;padding:2pt}
-.lrb{display:table;max-width:500px;margin:0 auto}
-.lrb div, #b{display:table-cell; vertical-align:top;text-align:center}
-.lrb button{display:block; margin:10px}
-#b{width: 400px;min-width: 400px;padding:20px;font-size: 18px}
