@@ -97,13 +97,13 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
   
 ### 5. Appendixs  
   
-### 5.1 Codes for this site  
+### 5.1 Codes of tutorial  website
 5.1.1 index.html  
 5.1.2 index.json  
 5.1.3 index.js  
 5.1.4 index.css  
   
-### 5.2 Files for examples  
+### 5.2 Files from examples
 5.2.1 GetResponse.php  
 5.2.2 ViewResponse.php  
 5.2.3 xml_document.xml  
@@ -8823,7 +8823,7 @@ See examples in section 4.10.1
   
   
 # 5. Appendixs
-## 5.1 Codes for this site
+## 5.1 Codes of tutorial  website
 ## 5.1.1 index.html  
   
 ```html  
@@ -9556,14 +9556,15 @@ display: table-cell;
 }
 .BS{box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5)}  
 ```  
-## 5.2 Files in examples
-## 5.2.1 GetResponse.php  
 
-  
+## 5.2 Files from examples
+## 5.2.1 GetResponse.php
 
 
 ```php
+
 echo file_get_contents('php://input');
+
 ```
 
   
@@ -10106,5 +10107,3 @@ __.scroll();
 __.modal();
 </script>
 ```
-
-  
