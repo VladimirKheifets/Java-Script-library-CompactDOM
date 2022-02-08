@@ -5297,7 +5297,7 @@ Disabled23();
   
 ## 3.22 Method show  
      
-   The * show * method is intended to be applied in conjunction with the *hide*  
+   The *show* method is intended to be applied in conjunction with the *hide*
 method described above. This method is applicable to only one element.   
   
 *_(selector).hide(Duration);*  
