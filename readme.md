@@ -6516,8 +6516,11 @@ ArrayType([JavaScript typed arrays](https://developer.mozilla.org/de/docs/Web/Ja
 In this case, the ArrayType is determined by default based on the number of bytes required  
 for proper packing. One number, taking into account the sign and type of number (integer or  
 floating point). For string data, the default is one byte per character.  
-<pre>The send method defines the _ArrayType variable, which can be used to get the original data
-from the arraybufer-object.```
+
+```
+The send method defines the _ArrayType variable, which can be used to get the original data
+from the arraybufer-object.
+```
   
 For example:  
   
