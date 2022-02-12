@@ -1,4 +1,4 @@
-# Java Script library CompactDOM 
+.gray_layer# Java Script library CompactDOM
 
 ### Version: 2.1, 2022-01-31
 
@@ -9799,8 +9799,7 @@ See above *modal* method
 .modal .close:hover
 {color:#FFCCD9;caret-color:transparent;}
 
-/*div[id^='modal_gray_layer']{*/
-.modal .gray_layer{
+.gray_layer{
 	width:100%;
 	height:100%;
 	position:absolute;
