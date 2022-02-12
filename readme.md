@@ -4690,11 +4690,15 @@ __.modal();
 <body>
 <!-- predefinend body content  -->
 <!-- will be created: -->
-<div id="modal" class="RB BS">
-<div class="modal_close">&times;</div>
-<div id="modal_content"></div>
+<div id="modal" class="modal" style="opacity: 0;
+transition-property: opacity;
+transition-duration: 600ms;
+transition-timing-function: cubic-bezier(0.02, 0.01, 0.47, 1);">
+<div class="close">×</div>
+<div id="modal_content" class="content"></div>
 </div>
-<div id="modal_gray_layer"></div>
+<div id="modal_gray_layer" class="gray_layer">
+</div>
 </body>
 </html>
 ```
@@ -9762,7 +9766,7 @@ See above *modal* method
 
 ```html
 <style>
-#modal{	
+.modal{
 	position:absolute;
 	z-index:1;
 	top:0;
@@ -9770,18 +9774,17 @@ See above *modal* method
 	background-color: #ffffff;
 	border: 1px solid #85A0C9;
 	border-radius: 5px;
-	box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5);	
+	box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5);
 }
 
-#modal_content{
+.modal .content{
 	max-width:740px;
 	display:table-cell;
 	padding:40 20 20 20;
 	font-size:14pt;
 }
 
-.modal_close
-{
+.modal .close{
 	color:#aaa;
 	cursor:pointer;
 	font-size:50px;
@@ -9793,10 +9796,11 @@ See above *modal* method
 	width: 20px;
 }
 
-.modal_close:hover
+.modal .close:hover
 {color:#FFCCD9;caret-color:transparent;}
 
-#modal_gray_layer{
+/*div[id^='modal_gray_layer']{*/
+.modal .gray_layer{
 	width:100%;
 	height:100%;
 	position:absolute;
