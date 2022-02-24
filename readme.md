@@ -171,6 +171,7 @@ _("head").script("index.js");
 	<div id="Sections"></div>
 	<div id="SectionsContent"></div>
 </div>
+<div class="footer"></div>
 </div>
 <script src="dist/rainbow.js"></script>
 <script src="src/language/generic.js"></script>
@@ -4702,16 +4703,22 @@ __.modal();
 </html>
 ```
 
-     
   
 - The parameter *Content* is *string*  - in this case, the method sets the content  
-   of the modal window and opens it.  
-- The *Content* parameter is an object with *url* property - in this case  
-   the content of the modal window will be retrieved using an ajax request and the window will be opened.   
-- The parameter *Content* is number *0* - in this case, the method closes the modal window.  
-  To close the modal window, the *CloseM* function is defined in the method.  
-  This function can be called in any event handler method. If the function parameter is not defined in the   
-  *click* method, then the *CloseM* function will be called by default.      
+   of the modal window and opens it. For example:
+
+   *_.modal("Your message has been successfully sent")*
+
+- The parameter *Content* is number - in this case, the method closes the modal window.
+	The parameter specifies the time in seconds after which the modal will be closed.
+  To close the modal window, the *CloseM* function is defined in the method.
+  This function can be called in any event handler method. If the function parameter is not defined in the
+  *click* method, then the <i>CloseM</i> function will be called by default. For example:
+
+   *_.modal(0)* -  closing  immediately
+
+   *_.modal(5)* - closing after 5 seconds
+
 Example for *modal* method  
 
 
@@ -4746,29 +4753,27 @@ EventHandlerFunction = function(){
 		__.modal("Hello!");
 		break;
 
-		case "_3":		
-		__.modal({url:"sections/content.txt"});		
-		break;	
-		
-		case "_4":	
-		content = "Do you really want to continue?<br>"; 
-		content += "<button>Yes</button>";
-		content += "<button>No</button>";		
-		__.modal(content);		
-		_("br+button+button").click(); //button 'No'
-		_("br+button").click(function(){ //button 'Yes'
-		alert("There should be a click event handler\n"
-		+ " for the 'Yes' button here.");
-		}); 		
-		break;	
-		
+		case "_3":
+		content = "Do you really want to continue?<br>";
+		content += "<button class='YN'>Yes</button>";
+		content += "<button class='YN'>No</button>";
+		__.modal(content);
+		_(".YN").click((e)=>{
+		bContent = _(e.target).content();
+		if(__.ins("No", bContent))
+			__.modal(0);
+		else
+			alert("There should be a click event handler\n"
+			+ " for the 'Yes' button here.");
+		});
+		break;
 	}
 	showContent();
 }
-showContent=function(){	
+showContent=function(){
 	cont = html.content();
-	cont = __.ins("><", cont, ">\n<");	
-	contT.content(cont);	
+	cont = __.ins("><", cont, ">\n<");
+	contT.content(cont);
 	contT.scroll("down");
 };
 _("button").click(EventHandlerFunction);
@@ -4786,24 +4791,22 @@ __.modal();
 <div>demo 2</div>
 __.modal("Hello!");
 </button><br>
+
 <button id="_3">
 <div>demo 3</div>
-__.modal({url:"sections/content.txt"});
-</button><br>
-<button id="_4">
-<div>demo 4</div>
-content = "Do you really want to continue?";<br> 	
+content = "Do you really want to continue?";<br>
+...........<br>
+...........<br>
 __.modal(content);<br>
-}); 		
+});
 </button><br>
+
 <div class="cont rb">
 <textarea id="contT"></textarea>
 </div>
 </body>
 </html>
 ```
-
-  
   
 ## 3.17 Method position  
      
@@ -8841,7 +8844,6 @@ maximum-scale=1, user-scalable=no, user-scalable=0" >
 <meta name="author" content="Vladimir Kheifets">
 <meta name="robots" content="index,follow" />
 <script type="text/javascript" src="sections/CompactDOM.min.js"></script>
-
 <script>
 _("head").script("index.js");
 </script>
@@ -8860,6 +8862,7 @@ _("head").script("index.js");
 	<div id="Sections"></div>
 	<div id="SectionsContent"></div>
 </div>
+<div class="footer"></div>
 </div>
 <script src="dist/rainbow.js"></script>
 <script src="src/language/generic.js"></script>
@@ -8875,16 +8878,18 @@ _("head").script("index.js");
   
 ```json  
 {
+"content":
+{
 	"Preface":
 	{
-		"About CompactDOM tutorial":"AboutThisSite.html",	
-		"What is the HTML DOM?":"WhatIsDOM.html",	
+		"About CompactDOM tutorial":"AboutThisSite.html",
+		"What is the HTML DOM?":"WhatIsDOM.html",
 		"What is the CompactDOM?":"WhatIsCompactDOM.html",
 		"How it works?":"HowItworks.html",
 		"CompactDOM methods":"CompactDOMmethods.html",
 		"Selectors of DOM elements":"SelectorsDOMelements.html"
 	},
-	
+
 	"Events handler methods":{
 		"on":"on.html",
 		"blur":"blur.html",
@@ -8904,7 +8909,7 @@ _("head").script("index.js");
 		"scroll":"scroll.html",
 		"submit":"submit.html"
 	},
-	
+
 	"Basic methods":
 	{
 		"animate":"animate.html",
@@ -8944,10 +8949,10 @@ _("head").script("index.js");
 			"DELETE XMLHttpRequest":"send6.html"
 		}
 	},
-	
+
 	"Auxiliary methods":
 	{
-		"ads":"ads.html",	
+		"ads":"ads.html",
 		"env":"env.html",
 		"esc":"esc.html",
 		"ins":"ins.html",
@@ -8960,7 +8965,7 @@ _("head").script("index.js");
 			"setToArrBuf":"setToArrBuf.html",
 			"getArrayType":"getArrayType.html",
 			"getFromArrBuf":"getFromArrBuf.html",
-			"setBlob":"setBlob.html"			
+			"setBlob":"setBlob.html"
 		},
 		"Check type methods":
 		{
@@ -8973,16 +8978,16 @@ _("head").script("index.js");
 			"u - undefined":"type.html"
 		}
 	},
-	
+
 	"Appendixs":
-	{		
+	{
 		"Codes for this site":
 		{
 			"index.html":"../index.html?code=html",
 			"index.json":"../index.json?code=json",
 			"index.js":"index_js.html",
 			"index.css":"../css/index.css?code=css"
-		},		
+		},
 		"Files in examples":
 		{
 			"GetResponse.php":"GetResponse.html",
@@ -8992,7 +8997,7 @@ _("head").script("index.js");
 			"content.css":"css/content.css?code=css",
 			"content.json":"content.json?code=json",
 			"content.txt":"content.txt?code=html"
-			
+
 		},
 		"CSS":
 		{
@@ -9001,12 +9006,29 @@ _("head").script("index.js");
 		},
 		"Predefined variables":"variable.html",
 		"CompactDOM projects":
-		{				
+		{
 			"CaesarCipher.js":"Projects/CaesarCipher.js",
 			"timeCalculator.js":"Projects/timeCalculator.js"
 		}
 	}
-}  
+},
+"footer":
+{
+	"copyright":"by Alto-Booking developer. All rights reserved.",
+	"links":
+	{
+		"Imprint":"Imprint.html",
+		"Contact":"Contact.php",
+		"Privacy":"Privacy.html"
+	},
+	"soziale":
+	{
+		"fab fa-github-square":"https://github.com/VladimirKheifets/Java-Script-library-CompactDOM",
+		"fab fa-dev":"https://dev.to/vladimirkheifets/java-script-library-compactdom-4ji8",
+		"fab fa-twitter-square":"https://twitter.com/VladimirKheife1/status/1496851597049094144"
+	}
+}
+}
 ```  
 ## 5.1.3 index.js  
   
@@ -9014,15 +9036,11 @@ _("head").script("index.js");
 _("head").script("themes/themes.js");
 start=function()
 {
-	SectionsContent = _("#SectionsContent");
-	/*
-	ifrContainer = _("#ifrContainer");
-	ifrResult = _("#ifrResult");
-	ifrContainer.hide();
-	*/
+	SectionsСontent = _("#SectionsСontent");
 	href = themeHref(false);
 	__.link({id:"color-shema",href:href, media:"screen"});
 	__.link("css/index.css,css/all.css,css/modal.css,css/button_to_up.css");
+	_("#modal1").modal();
 	__.scroll();
 	adj=_("#adj");
 	dl =_("#dark-light");
@@ -9054,7 +9072,8 @@ start=function()
 		prvnextInd.push(pr);
 	}
 
-	readFile = function(data, to, req){
+	createContent = function(rsp, to, req){
+		data = rsp["content"];
 		if(data)
 		{
 			prvnext=[];
@@ -9093,6 +9112,31 @@ start=function()
 				sections.create(par1,par2);
 			}
 			_("#Sections span").click(goContent);
+
+			//footer----------------------------
+			footer = rsp["footer"];
+			today = new Date();
+			copyright = "&copy; ";
+			copyright += today.getFullYear();
+			copyright += " " + footer["copyright"];
+			divFooter = _(".footer");
+			divFooter.create(copyright, {tag:"span"});
+			footerLinks = footer["links"];
+			tmp = [];
+			for(item in footerLinks) tmp.push(item);
+			divFooter.create(tmp, {tag:"span", class:"link"});
+			_(".link").click(goLfooter);
+			soziale = footer["soziale"];
+			for(item in soziale)
+			{
+				divFooter.create(1,
+				{
+					tag:"a",
+					href:soziale[item],
+					class: item + " icon",
+					target:"_blank"
+				});
+			}
 		}
 		else
 		{
@@ -9103,7 +9147,7 @@ start=function()
 		key0_0 = Object.keys(data[key0])[0];
 		H1 = key0_0;
 		prvnextL = prvnext.length;
-		goContent(data[key0][key0_0]);		
+		goContent(data[key0][key0_0]);
 	};
 
 	var idc;
@@ -9228,11 +9272,11 @@ start=function()
 	goRainbow=function(rsp,to,req){
 		GET = __.url(1,req);
 		if(code=GET['code'])
-		{			
+		{
 			preff = '<div></div>';
 			preff += '<pre><code data-language="';
-			preff += code + '">'; 
-			rsp = preff + rsp + '</code></pre>';		
+			preff += code + '">';
+			rsp = preff + rsp + '</code></pre>';
 		}
 
 		["html","head","body"].forEach(function(tag)
@@ -9241,7 +9285,7 @@ start=function()
 			rsp = __.ins("</"+tag+">",rsp,"&lt;/"+tag+"&gt;");
 		});
 		//--------------------------------------------
-		ind = H1ToInd();		
+		ind = H1ToInd();
 		indP = ind - 1;
 		indN = ind + 1;
 		out=getTitle();
@@ -9253,18 +9297,18 @@ start=function()
 		//--------------------------------------------
 		Rainbow.color();
 		//--------------------------------------------
-		Sc=_("#SectionsContent code");
+		Sc=_("#SectionsСontent code");
 		if(Sc.ElL>0)
 		{
 			i=1;
-			_("#SectionsContent code").each(function(el)
+			_("#SectionsСontent code").each(function(el)
 			{
 				el.attr("id","_"+i);
 				i++;
 			}
 			);
 		}
-		SCbutton =_("#SectionsContent > button");
+		SCbutton =_("#SectionsСontent > button");
 		if(SCbutton.exists)
 		{
 			i=1;
@@ -9284,7 +9328,7 @@ start=function()
 			);
 			SCbutton.click(viewDemo);
 		}
-		Sq=_("#SectionsContent .quote");
+		Sq=_("#SectionsСontent .quote");
 		if(Sq.exists)
 			Sq.each(function(el)
 			{
@@ -9325,8 +9369,8 @@ start=function()
 			goLink=function()
 			{
 				iReturn=ind;
-				H1=_(this).content();						
-				i = H1ToInd();				
+				H1=_(this).content();
+				i = H1ToInd();
 				url=prvnext[i][H1];
 				url=__.url("indR="+ind, url);
 				goContent(url);
@@ -9340,7 +9384,6 @@ start=function()
 		}
 		prev.click(goContenPN);
 		next.click(goContenPN);
-
 	};
 
 	goContent=function(u){
@@ -9357,7 +9400,7 @@ start=function()
 			{
 				url:url,
 				method:"get",
-				to:"#SectionsContent",
+				to:"#SectionsСontent",
 				func:goRainbow
 			}
 		);
@@ -9378,7 +9421,7 @@ start=function()
 		url:"index.json",
 		method:"get",
 		responseType:"json",
-		func:readFile
+		func:createContent
 	}
 	);
 	bs =_("#block-setting");
@@ -9415,14 +9458,115 @@ start=function()
 		}
 	});
 	ssh.mouseenter(showSetting);
-}
+
+	getRandomString = function(ln) {
+	    var ch = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+	    var result = '';
+	    chL = ch.length;
+	    for ( var i = 0; i < ln; i++ ) {
+	        result += ch.charAt(Math.floor(Math.random() * chL));
+	    }
+	    return result;
+	};
+
+	createCaptcha = function(ln){
+		if(!__.n(ln)) ln=6;
+		captcha =_("#captcha");
+		captcha.content("");
+		captcha.create(1,{tag:"canvas",id:"canv",width:130, height:50});
+		canv = _("#canv");
+		var ctx = canv.d.getContext("2d");
+		ctx.fillStyle = '#f1f1f1';
+  		ctx.fillRect(0,0,130,50);
+		captchaCode = getRandomString(ln);
+		ctx.font = "35px HoneyScriptCYR-Light";
+		ctx.strokeText(captchaCode, 10, 30);
+		code.value("");
+	};
+
+	validationForm = function(){
+		err = false;
+		errS="background-color:#FFCCD9";
+		re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(!re.test(String(email.value()).toLowerCase()))
+        {
+        	err = true;
+        	email.css(errS);
+        }
+
+		if(!__.ins("\\S+",message.value()))
+        {
+        	err = true;
+        	message.css(errS);
+        }
+
+        if((code.value()).toLowerCase() != captchaCode.toLowerCase())
+        {
+        	err = true;
+        	createCaptcha();
+        	code.value("");
+        	code.css(errS);
+        }
+        return !err;
+	};
+
+	setWhiteBg = function(e){
+		_(e.target).css("background-color:white");
+	};
+
+	sendForm = function(e){
+		e.preventDefault();
+		res = validationForm();
+		if(res)
+		{
+			__.send({
+			url:"Contact.php?senden=1",
+			method:"post",
+			to:"#modal1",
+			func:(rsp, to)=>{
+				_m = _(to);
+				_m.modal(rsp);
+				_m.modal(5)
+			}
+		});
+		}
+	};
+
+	goLfooterFunc = function(rsp, to, req){
+		_(to).modal(rsp);
+		if(__.ins("Contact", req))
+		{
+			email = _("input[name='email']");
+			message = _("textarea[name='message']");
+			code = _("input[name='code']");
+			createCaptcha();
+			_(".contact a").click(createCaptcha);
+			contactForm = _(".contact form");
+			_(contactForm.d.elements).each((elm,ind)=>{
+				if(ind<5) elm.click(setWhiteBg);
+			});
+			contactForm.submit(sendForm);
+		}
+	};
+
+	goLfooter = function(){
+		link = _(this).content();
+		url = footerLinks[link];
+		__.send({
+			url:url,
+			method:"get",
+			to:"#modal1",
+			func:goLfooterFunc
+		});
+	};
+};
 __.ready(start);
 
 function themeHref(light_theme){
 //defult light or dark theme
 	theme=(light_theme)?"github":"obsidian";
 	return "themes/css/"+theme+".css";
-}  
+};
 ```  
 ## 5.1.4 index.css  
   
