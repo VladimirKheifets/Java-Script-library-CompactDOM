@@ -1,4 +1,4 @@
-.gray_layer# Java Script library CompactDOM
+# Java Script library CompactDOM
 
 ### Version: 2.1, 2022-01-31
 
