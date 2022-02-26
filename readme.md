@@ -9598,15 +9598,16 @@ function themeHref(light_theme){
  .FWB{font-weight:bold}
  .FWN{font-weight:normal}
  
-  .head1{
+ .head1{
         font-family: 'HoneyScriptCYR-Light', serif;
         font-size: 45px;
 		text-shadow: 4px 4px 4px #aaa;
 		line-height: 1.25;
-		padding:0 2% 0 2%;		
+		padding:0 2% 0 3%
       }
+ .head2{margin-left:70px;font-size:30px}
 
- body,div,.quote,button,.abutton,.prev,.next{
+ body,div,.quote,button,.abutton,.prev,.next, input, textarea{
 		font-family: "Bebas Neue Book", Helvetica, sans-serif;
 		font-weight: 400;
 		line-height: 1.5;
@@ -9614,7 +9615,8 @@ function themeHref(light_theme){
 		color: #aaa;
 	}
 
-button,.abutton {border-radius:5px;border:1px solid #aaa;cursor:pointer}	
+button,.abutton, input, textarea, canvas {border-radius:5px;border:1px solid #aaa}
+button,.abutton {cursor:pointer}
 button:hover,.abutton:hover{background-color:#B4FFFF}
 a:not([href]){text-decoration:underline;cursor:pointer;color:blau !important}
 a{cursor:pointer}
@@ -9626,11 +9628,11 @@ a{cursor:pointer}
 	text-align:center;
 	background-color:#f1f1f1}
 
-#Sections,#SectionsContent{float:left;font-size:18px}
+#Sections,#SectionsСontent{float:left;font-size:18px}
 #Sections{
 	width:250px;
 	height:auto;
-	background-color:#FCFCFC;	
+	background-color:#FCFCFC;
 	padding:0 0 40px 10px
 	}
 #Sections span{
@@ -9642,23 +9644,23 @@ a{cursor:pointer}
 	}
 #Sections div{margin-top:10px; margin-bottom:5px;font-weight:bold}
 #Sections .sub-ind{margin-left:20px;}
-#SectionsContent{width: calc(90% - 270px);height:auto;padding:0 0 40px 40px;}
-#SectionsContent iframe{width: 100%; min-height: 250px;}
-#SectionsContent h1{font-size:24px;font-weight:normal;padding:0;margin:0}
-#SectionsContent div{white-space: pre;padding:10px 0 10px 0;overflow:auto}
-#SectionsContent button + div{margin-top:20px}
-#SectionsContent pre{border-radius:5px;padding:20px;overflow:auto}
-#SectionsContent pre code{font-size:1.2em !important;overflow:auto}
-#SectionsContent i{font-style: normal !important;color:blue}
+#SectionsСontent{width: calc(90% - 270px);height:auto;padding:0 0 40px 40px;}
+#SectionsСontent iframe{width: 100%; min-height: 250px;}
+#SectionsСontent h1{font-size:24px;font-weight:normal;padding:0;margin:0}
+#SectionsСontent div{white-space: pre;padding:10px 0 10px 0;overflow:auto}
+#SectionsСontent button + div{margin-top:20px}
+#SectionsСontent pre{border-radius:5px;padding:20px;overflow:auto}
+#SectionsСontent pre code{font-size:1.2em !important;overflow:auto}
+#SectionsСontent i{font-style: normal !important;color:blue}
 #block-setting{
 	position:fixed;
 	right:20px;
-	top:40px;
+	top:10px;
 	min-width:60px;
 	height:auto;
 	text-align:right;
 	padding:15px 15px 20px 15px;
-	background-color:white;	
+	background-color:white;
 	z-index:10;
 }
 #block-setting div{text-align:left}
@@ -9683,17 +9685,29 @@ width:33%;
 .row div p{
 width:30%;
 cursor:pointer;
-display: table-cell; 
+display: table-cell;
 }
+
 .prev{text-align:left}
 .return{text-align:center;}
 .next{text-align:right}
 .row div p:hover{color:#FFCCD9}
 .row i{color:#aaa !important}
 
+.footer{
+	clear: both;
+	position: relative;
+	padding:10 0 0 0;
+	border-top:1px dotted #D1D1D1;
+	text-align:center
+}
+
+.footer span{margin:0 30 0 0}
+.footer a,.link{cursor:pointer;margin-left:10px;text-decoration:none;color:#AAA}
+
 #settig{position:fixed;right:20px;top:20px;cursor: pointer}
 #tbw{cursor:pointer;font-size:20px;}
-#tbw:hover,#settig:hover{color:#FFCCD9}
+#tbw:hover,#settig:hover,.footer a:hover, .link:hover{color:#FFCCD9}
 
 .RB{
 	border: 1px solid #85A0C9;
@@ -9701,7 +9715,42 @@ display: table-cell;
 	-webkit-border-radius:5px;
 	-moz-border-radius: 5px
 }
-.BS{box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5)}  
+.BS{box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5)}
+
+
+.imprint{
+	width: 640px;
+	padding:20 0 40 0;
+	height:auto
+}
+.imprint br{clear:both}
+.imprint h1, .contact h1, .policy h1{font-size:24px;font-weight:normal;padding:0 0 10 0;margin:0}
+.imprint div, .imprint p{float:left;width: 300px;padding:2 5 2 5;margin:0}
+.imprint p{text-align:right}
+.imprint div{text-align:left}
+
+.contact,.policy{
+	padding:0 20 0 20;
+	height:auto
+}
+.contact div{padding:5 0 5 0;display:block}
+.contact input,.contact textarea{width: 400px; padding:0 5 0 5}
+.contact textarea{height:200px;margin:5 0 20 0}
+.contact button{margin:15 0 0 0}
+.contact a{color:#aaa;text-decoration:none}
+.contact a:hover{color:#FFCCD9;text-decoration:none}
+
+.policy	{width:800px;padding:0 20 10 20}
+.policy p{text-align:center;padding: 0 0 10 0;margin:0}
+.policy h2{font-size:1.2em;font-weight:normal;text-align:left;padding:10 0 15 0;margin:0}
+.policy div{padding:0 0 10 0;margin:0;text-align:justify}
+
+#captcha{text-align:left;padding:0 0 0 0}
+#captcha + td{padding:0 10 0 10}
+#captcha + td + td input{width:130px;padding:0 6 0 6}
+canvas{
+  pointer-events:none;
+}
 ```  
 
 ## 5.2 Files from examples
