@@ -3879,7 +3879,7 @@ The functionality of the method depends on the specified parameters. The followi
      
 - The *Value* parameter is undefined - in this case, the method returns a string containing  
    the value of the display property.   
-The following example use the '*content*' and '*display*' methods.  
+The following example use the '*content*', '*create*', '*css*', '*change*' and '*display*' methods.
 Example for method *each* with *callback function(Element)*.  
 
 
@@ -3896,7 +3896,7 @@ border:1px solid blue;
 font-weight:bold;
 border-radius:3px;
 padding:5px;
-color:blue"}
+color:blue}
 </style>
 </head>
 <body>
@@ -4039,7 +4039,60 @@ _("div").each(function(elementDiv, iDiv){
 </html>
 ```
 
-  
+Example "Color picker" for method *each* with *callback function(Element, IndexOfElement)*.
+
+```html
+<html>
+<meta charset=utf-8>
+<title>Color picker</title>
+<head>
+<script type="text/javascript" src="sections/CompactDOM.min.js"></script>
+<style>
+.bgc{
+	display: inline-block;
+	border: 1px solid #aaa;
+	border-radius:5px;
+	width: 20px;
+	height: 20px;
+	margin-left: 20px;
+	cursor: pointer;
+}
+input[type="color"] {
+	opacity: 0;
+	display: block;
+	width: 32px;
+	height: 32px;
+	border: none;
+	cursor: pointer;
+}
+
+#color_picker{
+	display: inline-block;
+	padding: 5 20 5 0;
+	background-color: white;
+}
+</style>
+</head>
+<body>
+<div id="color_picker"></div>
+<input name="selbgc" id ="selbgc" type="hidden">
+</body>
+<script>
+_("#color_picker").create(5,{tag:"span", class:"bgc"});
+colors = ["FFFFFF","F7F7F7","FFF8F7", "FFFDDE", "F9FEF6"];
+_(".bgc").each( (el, ind) => {
+	el.css("background-color:#"+colors[ind]);
+	inp = el.create(1,{tag:"input", type:"color", value:"#"+colors[ind]});
+	inp.change((e)=>{
+		color = e.target.value;
+		elArr = [el,_("body")];
+		for(i in elArr) elArr[i].css("background-color:"+color);
+		_("#selbgc").val(color);
+	});
+});
+</script>
+</html>
+```
   
 ## 3.12 Method hide  
      
