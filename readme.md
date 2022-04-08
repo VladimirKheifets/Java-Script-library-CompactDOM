@@ -139,7 +139,7 @@ You can see several projects implemented with CompactDOM:
 
 Compact DOM codes from these projects you can see in appendixs: *CaesarCipher.js*, *timeCalculator.js*.
 
-Below is the *index.html</a>* code of the CompactDOM tutorial website.
+Below is the *index.html* code of the CompactDOM tutorial website.
 
 ```html
 <html>
