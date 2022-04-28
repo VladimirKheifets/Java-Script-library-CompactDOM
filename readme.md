@@ -118,8 +118,10 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 5.4 Predefined variables  
   
 ### 5.5 CompactDOM projects  
-5.5.1 CaesarCipher.js  
-5.5.2 timeCalculator.js  
+5.5.1 CaesarCipher
+5.5.2 timeCalculator
+5.5.3 colorPicker
+5.5.4 crossPoint
 
 ## 1. Preface  
 ## 1.1 About CompactDOM tutorial  
@@ -137,7 +139,11 @@ You can see several projects implemented with CompactDOM:
 
  [https://www.alto-booking.com/developer/caesarcipher/](https://www.alto-booking.com/developer/caesarcipher/)
 
-Compact DOM codes from these projects you can see in appendixs: *CaesarCipher.js*, *timeCalculator.js*.
+ [https://www.alto-booking.com/developer/colorpicker//](https://www.alto-booking.com/developer/colorpicker/)
+
+ [https://www.alto-booking.com/developer/crosspoint/](https://www.alto-booking.com/developer/crosspoint/)
+
+Compact DOM codes from these projects you can see in appendixs: *CaesarCipher*, *timeCalculator*, *colorPicker*, *crossPoint*
 
 Below is the *index.html* code of the CompactDOM tutorial website.
 
@@ -10013,7 +10019,7 @@ See above *modal* method
 <style>
 .modal{
 	position:absolute;
-	z-index:1;
+	z-index:9999;
 	top:0;
 	left:0;
 	background-color: #ffffff;
@@ -10030,12 +10036,13 @@ See above *modal* method
 }
 
 .modal_close{
+	font-family: Courier;
 	color:#aaa;
 	cursor:pointer;
 	font-size:50px;
 	position:absolute;
-	right:0;
-	top:0;
+	right:0px;
+	top:0px;
 	margin:-0.2em 0.3em 0 0;
 	caret-color:transparent;
 	width: 20px;
@@ -10045,11 +10052,11 @@ See above *modal* method
 {color:#FFCCD9;caret-color:transparent;}
 
 .modal_gray_layer{
-	width:100%;
-	height:100%;
-	position:absolute;
+	position:fixed;
 	top:0px;
 	left:0px;
+	right: 0px;
+	bottom: 0px;
 	background: rgba(0, 0, 0, 0.1);
 	display:none;
 }
@@ -10074,7 +10081,7 @@ _und = undefined;
 ```
   
 ## 5.5 CompactDOM projects
-## 5.5.1 CaesarCipher.js  
+## 5.5.1 CaesarCipher script
      
 
 
@@ -10185,7 +10192,7 @@ __.ready(start);
 ```
 
   
-## 5.5.2 timeCalculator.js  
+## 5.5.2 timeCalculator script
      
 
 
@@ -10353,5 +10360,879 @@ _("#la").click(goSelector);
 _("#cookie").click(goSelector);
 __.scroll();
 __.modal();
+</script>
+```
+
+## 5.5.3 colorPicker script
+
+
+
+```html
+<script>
+/*
+
+Color Picker
+
+CompactDOM script
+
+Version: 1.0
+
+Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+
+Copyright ©2022 Vladimir Kheifets All Rights Reserved
+
+Online-tutorial of the Java Script Library CompactDOM:
+https://www.alto-booking.com/developer/CompactDOM/
+
+CompactDOM on GitHub:
+https://github.com/VladimirKheifets/Java-Script-library-CompactDOM
+
+*/
+
+/*
+The 'ready' method with default selelector 'window' calls an anonymous function
+after the page is fully loaded
+*/
+__.ready( () => {
+	//Defining 'head' and 'body' elements
+	body = _("body");
+	head = 	_("head");
+
+	/*
+	The 'create' method creates a child element 'title' in the parent element 'head'
+	<title>Color picker</title>
+	*/
+	head.create( "Color picker", {tag:"title"} );
+
+	/*
+	The 'link' method with default selelector 'head' creates  two child
+	elements 'link' in the parent element 'head'
+	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<link href="css/modal.css" rel="stylesheet" type="text/css">
+	*/
+	__.link("css/index.css,css/modal.css");
+
+	/*
+	The 'create' method creates a child element 'meta' in the parent element 'head'
+	<meta charset="utf-8">
+	*/
+	head.create(1,{ tag:"meta", charset:"utf-8" });
+
+	/*
+	The 'create' method creates a child element 'meta' in the parent element 'head'
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,
+	 user-scalable=no, user-scalable=0">
+	*/
+	head.create(1,
+	{
+		tag:"meta",
+		name:"viewport",
+		content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0"
+	});
+
+	/*
+	The 'create' method with default selelector 'body' creates a child element 'div'
+	in the parent element 'body' and defining 'div' element
+	<div align="center"></div>
+	*/
+	div = __.create(1,{tag:"div", align:"center"});
+
+	/*
+	The 'create' method creates a child element 'div' in the parent element 'div'
+	and defining 'divColorPicker' element
+	<div id="color_picker"></div>
+	*/
+	divColorPicker = div.create(1,{tag:"div", id:"color_picker"});
+
+	/*
+	The 'create' method creates five child elements 'span' in the parent element 'divColorPicker'
+	<div id="color_picker">
+		<span class="bgc" title="Click me">
+		<span class="bgc" title="Click me">
+		<span class="bgc" title="Click me">
+		<span class="bgc" title="Click me">
+		<span class="bgc" title="Click me">
+	</div>
+	*/
+	divColorPicker.create( 5, { tag:"span", class:"bgc", title:"Click me" } );
+
+	/*
+	The 'create' method creates a child element 'div' in the parent element 'div'
+	and defining 'colorCode' element
+	<div></div>
+	*/
+	colorCode = div.create( 1, {tag:"div"} );
+
+	/*
+	The 'hide' method makes the 'colorCode' element invisible.
+	<div style="display:none"></div>
+	*/
+	colorCode.hide();
+
+	// Defining 'colors' array
+	colors = [ "FFFFFF", "F7F7F7", "FFF8F7", "FFFDDE", "F9FEF6" ];
+
+	/*
+	The 'each' method calls an anonymous function for each 'span' elements
+	with selector '.bgc' (NodeList)
+	this function defining  each element - 'el'  and index of element - 'ind'
+	*/
+	_(".bgc").each( ( el, ind ) => {
+
+		/*
+		The 'scc' method addes to each element the attribute style="background-color:"
+  		The value of color for each attribute is determined from the 'colors[ind]'
+  		<span class="bgc" title="Click me" style="background-color:#FFFFFF"></span>
+		<span class="bgc" title="Click me" style="background-color:#F7F7F7"></span>
+		...
+		<span class="bgc" title="Click me" style="background-color:#F9FEF6"></span>
+		*/
+		el.css("background-color:#"+colors[ind]);
+
+		/*
+		The 'create' method creates a child element 'input' in the each parent element 'el'
+		and defining 'inp' element
+		<span class="bgc" title="Click me" style="background-color:#FFFFFF">
+		<input type="color" value="#FFFFFF">
+		</span>
+		<span class="bgc" title="Click me" style="background-color:#F7F7F7">
+		<input type="color" value="#F7F7F7">
+		</span>
+		...
+		<span class="bgc" title="Click me" style="background-color:#F9FEF6">
+		<input type="color" value="#F9FEF6">
+		</span>
+		*/
+		inp = el.create(1,{tag:"input", type:"color", value:"#"+colors[ind]});
+
+		//The 'on' method with the 'inp' selector handles the 'input' event and calls the anonymous function
+		inp.on("input", (e) => {
+
+			//The 'hide' method makes the 'colorCode' element unvisible.
+			colorCode.hide();
+
+			/*
+			The 'val' method with the 'e.target' selector returns the color code
+			and defines the 'color' variable.
+			The 'toUpperCase' method of native js converts the value
+			of the variable 'color' to uppercase
+			*/
+			color = _(e.target).val();
+			color = color.toUpperCase();
+
+			//Defining 'selectors' array
+			selectors = [el, body, _modal];
+
+			/*
+			The 'scc' method for each selector from the "selector" array is
+			addes attribute the style="background-color:", or
+			changes the previously defined value of this attribute.
+			*/
+			for(i in selectors) selectors[i].css("background-color:" + color );
+
+
+			//Defining 'modalContent' variable
+			modalContent  = "<div>Selected color code: " + color + "</div>";
+			modalContent += "<button>Copy code to clipboard</button>";
+			modalContent += "<button>Send</button>";
+
+			/*
+			Method 'modal' with default selector '#modal'
+			displays a modal window with the content from
+			the variable 'modalContent'
+			*/
+			__.modal(modalContent);
+
+			/*
+			The 'click' method for the 'button' selector
+			(two buttons in a modal window) handles the 'click'
+			event and calls an anonymous function.
+			*/
+
+			_("button").click((eB) => {
+
+				/*
+				The 'content' method for the 'eB.target' selector
+				returns the content of the element.
+				*/
+
+				if(_(eB.target).content() === "Send")
+				{
+					/*
+					The "send" button was clicked
+
+					Defining 'colorsCode' object
+					*/
+					colorsCode={};
+
+					/*
+					The 'each' method calls an anonymous function for each 'input' elements
+					this function defining  each element - 'elmInput'  and index of element - 'ind'
+					*/
+					_("input").each((elmInput, indInp) => {
+
+						/*
+						The "val" method returns the value of each "input" element.
+						Defining the properties of the 'colorsCode' object
+						*/
+						color = elmInput.val();
+						color = color.toUpperCase();
+
+						//Defining the properties(key:value) of the 'colorsCode' object
+						colorsCode["color"+indInp] = color;
+					});
+
+					/*
+					The "send" method creates a 'formData' object from
+					the "colorsCode" object and send AJAX Post Request whith default
+					request type - 'FormData' to server(url:"selectedColors.php")
+					and returns AJAX Response with default response type - 'text'
+					to callback function.
+					In this function, the 'css' method changes the background color
+					to 'white' and then the 'modal' method displays
+					the AJAX Response in a modal window.
+					*/
+					__.send(
+						{
+							url:"selectedColors.php",
+							method:"post",
+							data:colorsCode,
+							func:(rsp)=>{
+								_modal.css("background-color:white");
+								__.modal(rsp);
+							}
+						}
+					);
+				}
+				else
+				{
+					/*
+					The "Copy color code to clipboard" button was clicked
+
+					The code of the selected color will be copied to the clipboard
+					*/
+					navigator.clipboard.writeText(color);
+
+					//The content of the 'colorCode' element is created
+					colorCodeContent = "<br>Color code in clipbord: " + color;
+					colorCodeContent += "<button>Clear clipboard</button>";
+					colorCode.content(colorCodeContent);
+
+					/*
+					The 'click' method for the 'button' selector
+					(buttons in colorCodeContent) handles the 'click'
+					event and calls an anonymous function.
+					*/
+					_("button").click(()=>{
+
+						// Сlear clipboard data
+					 	navigator.clipboard.writeText("");
+
+					 	//The 'hide' method makes the 'colorCode' element unvisible.
+					 	colorCode.hide();
+					});
+
+					// The 'show' method makes the colorCode element visible.
+					colorCode.show();
+				}
+
+				// The 'modal' method with a parameter of '0' immediately closes the modal window.
+				__.modal(0);
+			});
+		});
+	});
+
+	 /*
+	 The 'modal' method without parameters only creates the HTML code of the modal window,
+	 but does not display it.
+
+	 <div id="modal" class="modal" style="opacity: 0; transition-property: opacity;
+	 transition-duration: 600ms; transition-timing-function: cubic-bezier(0.02, 0.01, 0.47, 1);">
+	 <div class="modal_close">&times;</div>
+	 <div id="modal_content" class="modal_content"></div>
+	 </div>
+	 <div id="modal_gray_layer" class="modal_gray_layer"></div>
+	*/
+	__.modal();
+
+	//Outputs a current html-document to the web console
+	OutputsHTML = document.documentElement;
+	if(outerHTML = OutputsHTML.outerHTML) OutputsHTML = outerHTML;
+	console.log(OutputsHTML);
+});
+</script>
+```
+
+## 5.5.4 crossPoint script
+
+
+```html
+<script>
+/*
+
+CrossPoin
+
+CompactDOM script
+
+Version: 1.0
+
+Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+
+Copyright ©2022 Vladimir Kheifets All Rights Reserved
+
+Online-tutorial of the Java Script Library CompactDOM:
+https://www.alto-booking.com/developer/CompactDOM/
+
+CompactDOM on GitHub:
+https://github.com/VladimirKheifets/Java-Script-library-CompactDOM
+
+*/
+
+__.ready(() => {
+  head = _("head");
+  title = "Calculate crossing point of two straight lines or line segments";
+  head.create( title, {tag:"title"} );
+  __.link("css/index.css,css/modal.css,css/button_to_up.css");
+  ctx = [];
+  lay = [];
+  lines = {};
+  inp = _("input");
+  lab = _("label");
+
+  colors = {1:"blue", 2:"purple", 3:"red"};
+  canvasWidth = 800;
+  canvasHeight = 400;
+  gridCell = 10;
+  X0 = canvasWidth/2 - 1;
+  Y0 = canvasHeight/2 - 1;
+
+  main = _("main");
+  main.create(title, {add:"befor",tag:"header"});
+  d = new Date();
+  year = d.getFullYear();
+  footer = "<p>&copy; </p>" + year + " Alto Booking"
+  main.create(footer, {add:"after",tag:"footer"});
+
+  main.create(3,
+    {
+      tag: "canvas",
+      id: "lay",
+      width: canvasWidth,
+      height: canvasHeight
+    });
+
+  elCanvas = _("canvas");
+
+  _("main div").each((el,ind) => {
+    i = ind + 1;
+    el.css("color:" + colors[i]);
+    el.attr("id","dL"+i);
+  });
+
+  nav = __.create(1, {tag:"nav"});
+
+  nav.create(
+    [
+      "Help",
+      "On/Off grid",
+      "Calculate with JS",
+      "Calculate with PHP",
+      "AJAX Request/Response",
+      "Data structure",
+      "Clear"
+    ],
+    {
+      tag:"button",
+      id:"but"
+    }
+  );
+
+  res = nav.create(1,{tag:"p"});
+  res.css("height:55px");
+  res.hide(100);
+
+  i=1;
+  while(i<3)
+  {
+    aI = "a" + i;
+    bI = "b" + i;
+    lines[aI] = _("#" + aI);
+    lines[bI] = _("#" + bI);
+    _("#dL"+i +" input").each((el,ind) => {
+      el.attr(
+      {
+        "type" : "radio",
+        "id" : "inp" + i,
+        "name" : "inp" + i,
+        "value" : ind+1
+      }
+      );
+      //if(ind == 0) el.attr("checked", true);
+    });
+    i++;
+  }
+
+
+  // Defining canvas & layots
+  elCanvas.each((el,ind) => {
+    ctx[ind] = el.d.getContext('2d');
+    lay[ind] = el;
+    el.css("z-index:" + ind);
+  });
+
+
+  startSetting = () => {
+    pXY = {
+      width: canvasWidth,
+      height: canvasHeight,
+      1:{line:{}},
+      2:{line:{}}
+    };
+    activesPoint = {1:"a", 2:"a"};
+    Drawing = {1:true,2:true};
+    lay[2].hide();
+    _("span").each((el) => {el.content("")});
+    but = [];
+    _("button").each( (el, ind) => {
+      but[ind] = el;
+      if(ind>1) el.hide();
+    });
+    inp.each( (el, ind) => {
+      if(ind == 0 || ind == 2) el.checked(2);
+      el.css("opacity:0");
+    });
+    lab.each( (el, ind) => {
+      if(ind == 1 || ind == 3) el.css("opacity:0");
+    });
+    res.css("opacity:0");
+  };
+
+
+
+  showLineSelector = (iL) => {
+    inpEl = {1:[0,1], 2:[2,3]};
+    labEl = {1:[1],2:[3]};
+    inp.each( (el, ind) => {
+      if(inpEl[iL].includes(ind))
+        el.css("opacity:1");
+    });
+    lab.each( (el, ind) => {
+      if(labEl[iL].includes(ind))
+        el.css("opacity:1");
+    });
+  }
+
+
+
+  drawingGrid = (cansasW, cansasH, sizeCell, c, color) => {
+    c.strokeStyle = "#ddd";
+    for (var x = sizeCell; x < cansasW; x += sizeCell) {
+      c.moveTo(x, 0);
+      c.lineTo(x, cansasH);
+    }
+
+    for (var y = sizeCell; y < cansasH; y += sizeCell) {
+      c.moveTo(0, y);
+      c.lineTo(cansasW, y);
+    }
+    c.stroke();
+  }
+
+  drawingAxes = (cansasW, cansasH, c, color) => {
+    // Drawing axes, Decart 0 in canvas x=399, y=198
+    // Axis X
+    x1X = 10;
+    y1X = cansasH/2;
+    x2X = cansasW - 20;
+    y2X = y1X;
+    drawingLine(c, x1X, y1X, x2X, y2X, color);
+    drawingLine(c, x2X-10, y2X+5, x2X, y2X, color);
+    drawingLine(c, x2X-10, y2X-5, x2X, y2X, color);
+    drawingText(c,'X', x2X+2, y2X+7, color);
+
+    // Axis Y
+    x1Y = cansasW/2;
+    y1Y = x1X+10;
+    x2Y = x1Y;
+    y2Y = x1Y - 10;
+    drawingLine(c, x1Y, y1Y, x2Y, y2Y, color);
+    drawingLine(c, x2Y+5, y1Y+10, x1Y, y1Y, color);
+    drawingLine(c, x2Y-5, y1Y+10, x1Y, y1Y, color);
+    drawingText(c,'Y', x1Y-6, y1Y-3, color);
+  }
+
+
+  drawingLine = (c, x1, y1, x2, y2, color )=> {
+    c.beginPath();
+    c.strokeStyle = color;
+    c.moveTo(x1, y1);
+    c.lineTo(x2, y2);
+    c.closePath();
+    c.stroke();
+  };
+
+  drawingPoint = (c, x, y, color )=> {
+    c.beginPath();
+    c.fillStyle = color;
+    c.arc(x, y, 3, 0, 2 * Math.PI);
+    c.fill();
+    c.closePath();
+    c.stroke();
+  };
+
+  drawingText = (c, text, x, y, color, font )=> {
+    if(__.u(font)) font = '16px arial'
+    c.beginPath();
+    c.fillStyle = color;
+    c.font = font;
+    c.fillText(text, x, y);
+    c.fill();
+    c.closePath();
+    c.stroke();
+  };
+
+  clearCanvas = (c) => {c.clearRect(0, 0, 800, 400)};
+
+  butShowHide = (s) => {
+    i = 2;
+    while(i<but.length)
+    {
+      if(s)
+        but[i].show();
+      else
+        but[i].hide();
+      i++;
+    }
+  };
+
+
+  ePoint = (e) => {
+    id = e.target.id;
+    ind = parseInt(id.substr(3))-1;
+    x = e.offsetX;
+    y = e.offsetY;
+    Xd = x - X0;
+    Yd = Y0 - y;
+  };
+
+  getlineABC = (XY) => {
+     if(__.a(XY))
+     {
+        x1 = XY[0];
+        y1 = XY[1];
+        x2 = XY[2];
+        y2 = XY[3];
+     }
+     else
+     {
+      x1 = XY["Xad"];
+      y1 = XY["Yad"];
+      x2 = XY["Xbd"];
+      y2 = XY["Ybd"];
+     }
+     A = y2 - y1;
+     B = x1 - x2;
+     C = -x1*y2 + y1*x2;
+     return [A,B,C];
+   };
+
+  crossPoint = (ABC1, ABC2) => {
+    A1 = ABC1[0];
+    B1 = ABC1[1];
+    C1 = ABC1[2];
+    A2 = ABC2[0];
+    B2 = ABC2[1];
+    C2 = ABC2[2];
+    Xcd = Math.round((B1*C2 - B2*C1)/(A2*B2 - A2*B1));
+    Ycd = Math.round((A1*C2 - A2*C1)/(A2*B1 - A1*B2));
+    Xc = Xcd + X0;
+    Yc = Y0 - Ycd;
+    return [Xc, Yc, Xcd, Ycd];
+  };
+
+  crossPointK = (XY1, XY2, X0, Y0 ) => {
+    x1 = XY1["Xad"];
+    y1 = XY1["Yad"];
+    x2 = XY1["Xbd"];
+    y2 = XY1["Ybd"];
+
+    x3 = XY2["Xad"];
+    y3 = XY2["Yad"];
+    x4 = XY2["Xbd"];
+    y4 = XY2["Ybd"];
+    //-----------------------------------
+    z1 = (x3-x1)*(y2-y1)-(y3-y1)*(x2-x1);
+    z2 = (x4-x1)*(y2-y1)-(y4-y1)*(x2-x1);
+    z3 = (x1-x3)*(y4-y3)-(y1-y3)*(x4-x3);
+    z4 = (x2-x3)*(y4-y3)-(y2-y3)*(x4-x3);
+    crossPointCheck = (z3*z4>0 || z1*z2>0)?false:true;
+    //-----------------------------------
+    if(crossPointCheck)
+    {
+      k1 = (y1 - y2) / (x1 - x2);
+      b1 = y2 - k1 * x2;
+      k2 = (y3 - y4) / (x3 - x4);
+      b2 = y4 - k2 * x4;
+      Xd = Math.round((b2 - b1)/(k1 - k2));
+      Yd = Math.round(k1*Xd + b1);
+      X = Xd + X0;
+      Y = Y0 - Yd;
+      return {
+        crossPointCheck: true,
+        X:X,
+        Y:Y,
+        Xd:Xd,
+        Yd:Yd
+      };
+    }
+    else
+      return {
+        crossPointCheck:false
+    };
+  };
+
+  elCanvas.on('mousedown', (e) => {
+    ePoint(e);
+    if(Drawing[ind])
+    {
+      drawingPoint(ctx[ind], x, y, colors[ind]);
+      if(activesPoint[ind]==="a")
+      {
+        activesPoint[ind] = "b";
+        pXY[ind]["Xa"] = x;
+        pXY[ind]["Ya"] = y;
+        pXY[ind]["Xad"] = Xd;
+        pXY[ind]["Yad"] = Yd;
+      }
+      else
+      {
+        pXY[ind]["Xb"] = x;
+        pXY[ind]["Yb"] = y;
+        pXY[ind]["Xbd"] = Xd;
+        pXY[ind]["Ybd"] = Yd;
+        drawingLine(ctx[ind], pXY[ind]["Xa"], pXY[ind]["Ya"], x, y, colors[ind]);
+        lay[2].show();
+        Drawing[ind] = false;
+        if(ind == 2)
+        {
+          butShowHide(1);
+          showLineSelector(1);
+          showLineSelector(2);
+        }
+      }
+    }
+  });
+
+  elCanvas.on('mousemove', (e) => {
+    ePoint(e);
+    if(Drawing[ind])
+    {
+      ab = activesPoint[ind];
+      if(ab === "b")
+      {
+         clearCanvas(ctx[ind]);
+         drawingPoint(ctx[ind], pXY[ind]["Xa"], pXY[ind]["Ya"], colors[ind]);
+         drawingLine(ctx[ind], pXY[ind]["Xa"], pXY[ind]["Ya"], x, y, colors[ind]);
+         contP = "end point: ";
+      }
+      else
+        contP = " start point: ";
+      lines[ab+ind].content(contP + "x = "+Xd+", y = "+Yd);
+    }
+  });
+
+  inp.change((e) => {
+    el = e.target;
+    id = _(el).attr("id");
+    i = id.substr(3);
+    if(activesPoint[i]==="b")
+    {
+      val = parseInt(_(el).val());
+      if(val === 2)
+      {
+        ABC1 = getlineABC(pXY[i]);
+        ABC2a = getlineABC([-400, -200, -400, 200]);
+        ABC2b = getlineABC([400, -200, 400, 200]);
+        XYca = crossPoint(ABC1, ABC2a);
+        XYcb = crossPoint(ABC1, ABC2b);
+        drawingLine(ctx[i], XYca[0], XYca[1],  XYcb[0], XYcb[1], colors[i]);
+        pXY[i]["line"] = {
+          Xa:  XYca[0],
+          Ya:  XYca[1],
+          Xad: XYca[2],
+          Yad: XYca[3],
+          Xb:  XYcb[0],
+          Yb:  XYcb[1],
+          Xbd: XYcb[2],
+          Ybd: XYcb[3]
+        };
+      }
+      else
+      {
+         clearCanvas(ctx[i]);
+         drawingPoint(ctx[i], pXY[i]["Xa"], pXY[i]["Ya"], colors[i]);
+         drawingLine(ctx[i], pXY[i]["Xa"], pXY[i]["Ya"], pXY[i]["Xb"], pXY[i]["Yb"], colors[i]);
+         drawingPoint(ctx[i], pXY[i]["Xb"], pXY[i]["Yb"], colors[i]);
+         delete pXY[i].line;
+      }
+    }
+  });
+
+  showResult = (XYcp, code) => {
+    if(__.u(code)) code="PHP";
+    res.show(1);
+    if(XYcp["crossPointCheck"])
+    {
+      drawingPoint(ctx[2], XYcp["X"], XYcp["Y"], colors[3]);
+      out = "Crossing point found.<br>";
+      out += "Coordinates ";
+      out += "X: "+XYcp["Xd"] + ", Y: " + XYcp["Yd"];
+      out += "<br>calculated with " + code;
+      res.content(out);
+    }
+    else
+    {
+      out = "Crossing point not found!<br>";
+      out += "Please click the \"clear\"<br>button and try again.";
+      res.content(out);
+    }
+  };
+
+  printInfo = (rsp) => {
+      var   out = "<div>";
+      if(rsp)
+      {
+        out += "JSON-Request";
+        out += "<br>&nbsp;<br>";
+      }
+      out += "Keys of line segments and straight lines: 1,2";
+      out += "<br>Start point 'a', end point 'b':";
+      out += "<br>Xa,Ya, Xb,Yb - absolute coordinates";
+      out += "<br>Xad,Yad, Xbd,Ybd - cartesian coordinates";
+      out += "<br>Key 'line' - coordinates of line<br>or empty object";
+      out += "<br>Keys 'width', 'height' - width and height ";
+      out += "<br>of the rectangle (canvas) bounding the plane";
+      if(rsp)
+      {
+        out += "<br>&nbsp;<br>";
+        out += "<br>JSON-Response<br>";
+        out += "&nbsp;<br>";
+        out += "Key crossPointCheck:<br>";
+        out += "true - crossing point found,<br>";
+        out += "false - crossing not found<br>";
+        out += "Crossing point coordinates:<br>";
+        out += "X,Y - absolute coordinates<br>";
+        out += "Xd,Yd - cartesian coordinates<br>";
+      }
+      out += "</div>";
+      return out;
+  };
+
+  _("button").click((e) => {
+  id = e.target.id;
+  i = parseInt(id.substr(3));
+    switch(i)
+    {
+      case 1:
+      obj=
+      {
+        url:"help.html",
+        method:"get",
+        func:(rsp) => {
+         __.modal(rsp);
+        },
+        debug:1
+      }
+      __.send(obj);
+      break;
+
+      case 2:
+      clearCanvas(ctx[0]);
+      if(gridOn)
+      {
+        gridOn = false
+        drawingAxes(800, 400, ctx[0], "#aaa");
+      }
+      else
+      {
+        gridOn = true;
+        drawingGrid(800, 400, 10, ctx[0], "#ddd");
+        drawingAxes(800, 400, ctx[0], "#aaa");
+      }
+      break;
+
+      case 3:
+      XY1 = (pXY[1].line.Xa)?pXY[1].line:pXY[1];
+      XY2 = (pXY[2].line.Xb)?pXY[2].line:pXY[2];
+      XYcp =  crossPointK(XY1, XY2, X0, Y0 );
+      showResult(XYcp,"Java Script");
+      console.log(XYcp);
+      break;
+
+      case 4:
+      obj=
+      {
+        url:"crossPoint.php",
+        method:"post",
+        dataType: "json",
+        responseType: "json",
+        data:pXY,
+        func: showResult
+      }
+      __.send(obj);
+      break;
+
+      case 5:
+      obj=
+      {
+        url:"crossPoint.php?pr=1",
+        method:"post",
+        dataType: "json",
+        data:pXY,
+        func: (rsp) => {
+          out = "<div class = 'outPr'>";
+          out += rsp;
+          out += printInfo(true);
+          out += "</div>";
+          __.modal(out);
+        }
+      }
+      __.send(obj);
+      break;
+
+      case 6:
+      obj=
+      {
+        url:"crossPoint.php?pr=2",
+        method:"post",
+        dataType: "json",
+        data:pXY,
+        func: (rsp) => {
+          out = "<div class = 'outPr'>";
+          out += rsp;
+          out += printInfo();
+          out += "</div>";
+          __.modal(out);
+        }
+      }
+      __.send(obj);
+      break;
+
+      case 7:
+      clearCanvas(ctx[1]);
+      clearCanvas(ctx[2]);
+      startSetting();
+      break;
+    }
+  });
+
+  //----------------------------------------------
+  gridOn = true;
+  drawingGrid(canvasWidth, canvasHeight, gridCell, ctx[0], "#ddd");
+  drawingAxes(canvasWidth, canvasHeight, ctx[0], "#aaa");
+  startSetting();
+  __.modal();
+  __.scroll();
+ });
 </script>
 ```
