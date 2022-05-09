@@ -1,4 +1,4 @@
-# Java Script library CompactDOM
+# Java Script library CompactDOM 
 
 ### Version: 2.1, 2022-01-31
 
@@ -6,7 +6,7 @@ Author: Vladimir Kheifets <kheifets.vladimir@online.de>
 
 Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved  
 ## Contents  
-### 1. Preface  
+## 1. Preface  
 1.1 About CompactDOM tutorial  
 1.2 What is the HTML DOM?  
 1.3 What is the CompactDOM?  
@@ -14,7 +14,7 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 1.5 CompactDOM methods  
 1.6 Selectors of DOM elements  
   
-### 2. Events handler methods  
+## 2. Events handler methods  
 2.1 Method on  
 2.2 Method blur  
 2.3 Method change  
@@ -26,14 +26,15 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 2.9 Method keypress  
 2.10 Method keyup  
 2.11 Method load  
-2.12 Method mouseenter  
-2.13 Method mouseleave  
-2.14 Method ready  
-2.15 Method resize  
-2.16 Method scroll  
-2.17 Method submit  
+2.12 Method media  
+2.13 Method mouseenter  
+2.14 Method mouseleave  
+2.15 Method ready  
+2.16 Method resize  
+2.17 Method scroll  
+2.18 Method submit  
   
-### 3. Basic methods  
+## 3. Basic methods  
 3.1 Method animate  
 3.2 Method attr  
 3.3 Method attribute  
@@ -47,30 +48,31 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 3.11 Method each  
 3.12 Method hide  
 3.13 Method ishide  
-3.14 Method link  
-3.15 Method lock  
-3.16 Method modal  
-3.17 Method position  
-3.18 Method prop  
-3.19 Method reload  
-3.20 Method script  
-3.21 Method selected  
-3.22 Method show  
-3.23 Method style  
-3.24 Method tag  
-3.25 Method transition  
-3.26 Method val  
-3.27 Method value  
+3.14 Method include  
+3.15 Method link  
+3.16 Method lock  
+3.17 Method modal  
+3.18 Method position  
+3.19 Method prop  
+3.20 Method reload  
+3.21 Method script  
+3.22 Method selected  
+3.23 Method show  
+3.24 Method style  
+3.25 Method tag  
+3.26 Method transition  
+3.27 Method val  
+3.28 Method value  
   
-### 3.28 send method  
-3.28.1 About the send method  
-3.28.2 Redirect and submit  
-3.28.3 POST XMLHttpRequest  
-3.28.4 PUT XMLHttpRequest  
-3.28.5 GET XMLHttpRequest  
-3.28.6 DELETE XMLHttpRequest  
+## 3.29 send method  
+3.29.1 About the send method  
+3.29.2 Redirect and submit  
+3.29.3 POST XMLHttpRequest  
+3.29.4 PUT XMLHttpRequest  
+3.29.5 GET XMLHttpRequest  
+3.29.6 DELETE XMLHttpRequest  
   
-### 4. Auxiliary methods  
+## 4. Auxiliary methods  
 4.1 Method ads  
 4.2 Method env  
 4.3 Method esc  
@@ -80,13 +82,13 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 4.7 Method sob  
 4.8 Method url  
   
-### 4.9 Arraybufer methods  
+## 4.9 Arraybufer methods  
 4.9.1 setToArrBuf  
 4.9.2 getArrayType  
 4.9.3 getFromArrBuf  
 4.9.4 setBlob  
   
-### 4.10 Check type methods  
+## 4.10 Check type methods  
 4.10.1 a - array  
 4.10.2 b - boolean  
 4.10.3 f - function  
@@ -95,15 +97,15 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 4.10.6 s - string  
 4.10.7 u - undefined  
   
-### 5. Appendixs  
+## 5. Appendixs  
   
-### 5.1 Codes of tutorial  website
+## 5.1 Codes for this site  
 5.1.1 index.html  
 5.1.2 index.json  
 5.1.3 index.js  
 5.1.4 index.css  
   
-### 5.2 Files from examples
+## 5.2 Files in examples  
 5.2.1 GetResponse.php  
 5.2.2 ViewResponse.php  
 5.2.3 xml_document.xml  
@@ -112,45 +114,44 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 5.2.6 content.json  
 5.2.7 content.txt  
   
-### 5.3 CSS  
+## 5.3 CSS  
 5.3.1 CSS for scroll method  
 5.3.2 CSS for modal method  
 5.4 Predefined variables  
   
-### 5.5 CompactDOM projects  
-5.5.1 CaesarCipher
-5.5.2 timeCalculator
-5.5.3 colorPicker
-5.5.4 crossPoint
+## 5.5 CompactDOM projects  
+5.5.1 CaesarCipher.js  
+5.5.2 timeCalculator.js  
+5.5.3 ColorPicker.js  
+5.5.4 CrossPoint.js  
+5.5.5 DeviceCheck.js  
 
 ## 1. Preface  
 ## 1.1 About CompactDOM tutorial  
      
-You can find tutorial of the Java Script Library CompactDOM on the website:
-
-[https://www.alto-booking.com/developer/CompactDOM/](https://www.alto-booking.com/developer/CompactDOM/)
-
+You can find tutorial of the Java Script Library CompactDOM on the website:   
+[https://www.alto-booking.com/developer/CompactDOM/](https://www.alto-booking.com/developer/CompactDOM/)  
 The open source code of the site is implemented with CompactDOM and demonstrates the  
-use of this library.
+use of this library.  
+You can see several projects implemented with CompactDOM:  
+  
+[https://www.alto-booking.com/developer/timecalculator/](https://www.alto-booking.com/developer/timecalculator/)  
+[https://www.alto-booking.com/developer/caesarcipher/](https://www.alto-booking.com/developer/caesarcipher/)  
+[https://www.alto-booking.com/developer/colorpicker/](https://www.alto-booking.com/developer/colorpicker/)  
+[https://www.alto-booking.com/developer/crosspoint/](https://www.alto-booking.com/developer/crosspoint/)  
+[https://www.alto-booking.com/developer/devicecheck/](https://www.alto-booking.com/developer/devicecheck/)  
+  
+Compact DOM codes from these projects you can see in appendixs:  
+*CaesarCipher.js*, *timeCalculator.js*, *ColorPicker.js*, *CrossPoint.js*, *DeviceCheck.js*  
+  
+Below is the *index.html* code of the CompactDOM tutorial website.  
+  
 
-You can see several projects implemented with CompactDOM:
-
- [https://www.alto-booking.com/developer/timecalculator/](https://www.alto-booking.com/developer/timecalculator/)
-
- [https://www.alto-booking.com/developer/caesarcipher/](https://www.alto-booking.com/developer/caesarcipher/)
-
- [https://www.alto-booking.com/developer/colorpicker//](https://www.alto-booking.com/developer/colorpicker/)
-
- [https://www.alto-booking.com/developer/crosspoint/](https://www.alto-booking.com/developer/crosspoint/)
-
-Compact DOM codes from these projects you can see in appendixs: *CaesarCipher*, *timeCalculator*, *colorPicker*, *crossPoint*
-
-Below is the *index.html* code of the CompactDOM tutorial website.
 
 ```html
 <html>
 <meta charset=utf-8>
-<title>CompactDOM manual</title>
+<title>CompactDOM tutorial</title>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1,
 maximum-scale=1, user-scalable=no, user-scalable=0" >
@@ -164,6 +165,10 @@ _("head").script("index.js");
 </script>
 </head>
 <body>
+<div>
+	<span class="head1">CompactDOM</span>
+	<span class="head2">Online-tutorial of the Java Script Library CompactDOM</span>
+</div>
 <div id="block-setting">
 <i id="setting" class="fas fa-cog"></i>
 	<div>
@@ -175,10 +180,9 @@ _("head").script("index.js");
 </div>
 <div class="CLB">
 	<div id="Sections"></div>
-	<div id="SectionsContent"></div>
+	<div id="SectionsСontent"></div>
 </div>
 <div class="footer"></div>
-</div>
 <script src="dist/rainbow.js"></script>
 <script src="src/language/generic.js"></script>
 <script src="src/language/html.js"></script>
@@ -207,7 +211,7 @@ for their very useful developments, which this site helped me to implement.
   
 ## 1.2 What is the HTML DOM?  
      
-> [MDN, Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+[MDN, Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
 
 ```
 	The Document Object Model (DOM) is a programming interface for HTML and XML documents.
@@ -220,6 +224,7 @@ window or as the HTML source. But it is the same document in both cases.
 The Document Object Model (DOM) represents that same document so it can be manipulated. 
 The DOM is an object-oriented representation of the web page, which can be modified with 
 a scripting language such as JavaScript.
+
 ```
   
      
@@ -324,7 +329,7 @@ For example, there is an HTML document with Java Script:
 simplify manipulating DOM elements. One character *_* is alias name *CompactDOM* object.  
 The current version of CompactDOM can be downloaded from [GitHub](https://github.com/VladimirKheifets/Java-Script-library-CompactDOM)  
 Browser support: Chrome 4.0, Internet Explorer 10.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0  
-Size of the current version (file CompactDOM.min.js) 14Kb  
+Size of the current version (file CompactDOM.min.js) 15Kb  
   
 Consider an example of code implemented with CompactDOM   
   
@@ -1679,7 +1684,72 @@ img.load(function(){
 
   
   
-## 2.12 Method mouseenter  
+## 2.12 Method media  
+     
+   This method is designed to check media queries set according to the rules of the CSS language.  
+*mediaObject = __.media(string media query);*  
+or  
+*__.media(string media query, events handler function);*  
+or  
+*__.media(mediaObject, events handler function);*  
+  
+If one parameter is defined as a media query string, the method evaluates and returns  
+an object:*  
+{  
+  obj: mediaQueryObject,  
+  ok: true/false  
+}*  
+For example:
+
+```js
+if(__.media("(min-width: 1200px)").ok)
+  alert("Extra large devices (large desktops, 1200px and up)");
+res = __.media("(orientation: portrait)");
+orientation = (res.ok)?"portrait":"landscape";
+```
+
+     
+If two paretes are defined, then the first parameter can specify a media query string or object,  
+and the second parameter must define a events handler function.  
+For example:
+
+```js
+__.media("(orientation: portrait)", (e) => {
+  orientation = (e.matches)?"portrait":"landscape";
+  alert(orientation);
+});
+// or
+res = __.media("(orientation: portrait)");
+__.media(res, (e) => {
+  orientation = (e.matches)?"portrait":"landscape";
+  alert(orientation);
+});
+```
+
+  
+Example for method media
+
+```html
+<html>
+<head>
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<div id="msg"></div>
+</body>
+<script>
+res = __.media("(orientation: portrait)");
+orientation = (res.ok)?"portrait":"landscape";
+cont = "Orientation is " + orientation;
+_("#msg").content(cont);
+</script>
+</html>
+```
+
+  
+  
+## 2.13 Method mouseenter  
      
    This method handles the mouseenter event type.   
 *_(selector).mouseenter(events handler function);*  
@@ -1716,7 +1786,7 @@ Example. Selector - tag name of elements, defined several button elements(NodeLi
 
   
   
-## 2.13 Method mouseleave  
+## 2.14 Method mouseleave  
      
    This method handles the mouseleave event type.   
 *_(selector).mouseleave(events handler function);*  
@@ -1753,7 +1823,7 @@ Example. Selector - tag name of elements, defined several button elements(NodeLi
 
   
   
-## 2.14 Method ready  
+## 2.15 Method ready  
      
    This method handles the load event type. Method load has alias name is ready.  
 *_(selector).load(events handler function);*  
@@ -1835,7 +1905,7 @@ img.load(function(){
 
   
   
-## 2.15 Method resize  
+## 2.16 Method resize  
      
    if parametr is event handler function, then this method handles the resize event type  
 for window object, otherwise this method changes the height of the element based on the height  
@@ -1919,7 +1989,7 @@ tarea.resize(10);
 
   
   
-## 2.16 Method scroll  
+## 2.17 Method scroll  
      
    if parametr is event handler function, then this method handles the scroll event type.  
 If no selector is defined, then only in this case the default selector is "document".    
@@ -2046,7 +2116,7 @@ div.scroll(Y);
 
   
   
-## 2.17 Method submit  
+## 2.18 Method submit  
      
    if parametr is event handler function, then this method handles the submit event type.  
 If there are several forms in the document, then it is necessary to define a selector.  
@@ -2365,15 +2435,14 @@ specified by the second parameter.
    It is allowed to specify the names of several attributes separated by commas.  
    For example Attribute object:
    ```js
-   {  
+   {
       width : "100",  
       height : "200",  
       rem : "readonly, placeholder"  
    }
-   ```
-  
+  ```
 Here the examples will use the *css*, *ishide* and *content* methods, which will be described below.  
-Example for method attr.
+Example 1. Method attr.  
 
 
 ```html
@@ -2453,6 +2522,86 @@ html-code of input element:<br>
 ```
 
   
+     
+Example 2. Method attribute.  
+
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+<style>
+button{width:500px;margin:0 0 10 0;text-align:left;padding:1}
+</style>
+</head>
+<body>
+<button id="_1">inp.attribute("name","inp1")</button><br>
+<button id="_2">inp.attribute(
+{
+  id:"inp1",
+  name:"width",
+  type:"text",
+  placeholder:"width"
+}
+)</button><br>
+<button id="_3">
+inp.attribute(
+{
+ {rem : "readonly,placeholder"}
+}
+)</button>
+<button id="_4">alert(inp.attribute("id"))</button>
+<br>
+input element:
+<p><input></p>
+html-code of input element:<br>
+<textarea id="msg" cols=80 rows=1></textarea>
+</body>
+<script>
+	inp = _("p > input");
+	p = _("p");
+	msg = _("#msg");
+	buttonsCollection = _("button");
+	//buttons events handler
+	EventHandlerFunction = function(){
+	switch(this.id)
+	{
+		case "_1":
+		inp.attribute("name","inp1");
+		break;
+
+		case "_2":
+		inp.attribute(
+		{
+			id : "inp1",
+			name : "width",
+			type : "text",
+			placeholder : "width",
+			readonly : true
+		});
+		break;
+
+		case "_3":
+		inp.attribute({ rem : "readonly,placeholder" });
+		break;
+
+		case "_4":
+		alert(inp.attribute("id"));
+		return;
+		break;
+
+	}
+	msg.content(p.content());
+	}
+	//sets up a function events handler function
+	buttonsCollection.click(EventHandlerFunction);
+	msg.content(p.content());
+</script>
+</html>
+```
+
   
   
 ## 3.3 Method attribute  
@@ -2474,16 +2623,98 @@ specified by the second parameter.
    the value of which specifies the name of the attribute to be removed.  
    It is allowed to specify the names of several attributes separated by commas.  
    For example Attribute object:
-  ```js
+   ```js
    {
       width : "100",
       height : "200",
       rem : "readonly, placeholder"
    }
-   ```
+  ```
   
-Here the examples will use the *css*, *ishide* and *content* methods, which will be described below.
-Example for method attribute.
+Here the examples will use the *css*, *ishide* and *content* methods, which will be described below.  
+Example 1. Method attr.  
+
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+<style>
+button{width:500px;margin:0 0 10 0;text-align:left;padding:1}
+</style>
+</head>
+<body>
+<button id="_1">inp.attribute("name","inp1")</button><br>
+<button id="_2">inp.attribute(
+{
+  id:"inp1",
+  name:"width",
+  type:"text",
+  placeholder:"width"
+}
+)</button><br>
+<button id="_3">
+inp.attribute(
+{ 
+ {rem : "readonly,placeholder"}
+}
+)</button>
+<button id="_4">alert(inp.attribute("id"))</button>
+<br>
+input element:
+<p><input></p>
+html-code of input element:<br>
+<textarea id="msg" cols=80 rows=1></textarea>
+</body>
+<script>
+	inp = _("p > input");
+	p = _("p");
+	msg = _("#msg");
+	buttonsCollection = _("button");			
+	//buttons events handler	
+	EventHandlerFunction = function(){	
+	switch(this.id)
+	{
+		case "_1":
+		inp.attribute("name","inp1");
+		break;
+		
+		case "_2":
+		inp.attribute(
+		{
+			id : "inp1",
+			name : "width",
+			type : "text",
+			placeholder : "width",
+			readonly : true
+		});	
+		break;
+
+		case "_3":
+		inp.attribute({ rem : "readonly,placeholder" });
+		break;
+		
+		case "_4":
+		alert(inp.attribute("id"));
+		return;
+		break;
+		
+	}	
+	msg.content(p.content());
+	}
+	//sets up a function events handler function
+	buttonsCollection.click(EventHandlerFunction);
+	msg.content(p.content());	
+</script>
+</html>
+```
+
+  
+     
+Example 2. Method attribute.  
+
 
 ```html
 <html>
@@ -2784,7 +3015,8 @@ and sets the received HTML content of an element.
 - parameter *Content undefined*, - in this case, the method returns the HTML content of the element.   
   
 The example below will use the following files:  
-Text file *sections/content.txt*
+Text file *sections/content.txt*  
+
 
 ```html
 <p>the method <b>content</b> sends an AJAX Request <b>
@@ -2793,7 +3025,7 @@ content of an element.</p>
 ```
   
      
-PHP file *sections/content.php*
+PHP file *sections/content.php*  
 
 ```php
 echo "<p>the method <b>content</b> sends an AJAX Request <b>"
@@ -2879,7 +3111,8 @@ If the parameter is an *array*, then the value of each element of the array will
 of each created html element.  
 For example, *Data = ["Apple","Orange","Grape"]* to create three option elements:   
 
-```html<option>Apple</option>
+```html
+<option>Apple</option>
 <option>Orange</option>
 <option>Grape</option>
 ```
@@ -2888,7 +3121,8 @@ if the parameter is an *object*, then each property of that object will be used 
 element being created, and the property value will be used to set the content of the element.  
 For example, *Data = {1:"Apple",2:"Orange",3:"Grape"}* to create three option elements:   
 
-```html<option value="1">Apple</option>
+```html
+<option value="1">Apple</option>
 <option value="2">Orange</option>
 <option value="3">Grape</option>
 ```
@@ -3529,7 +3763,7 @@ border-radius:3px;
 padding:5px;
 color:blue">
 The parameter must contain a string that corresponds to the
-rules of the CSS language (Cascading Style Sheets).
+rules of the СSS language (Cascading Style Sheets).
 </div>
 </div>
 <div class="cont rb">
@@ -3617,7 +3851,7 @@ border-radius:3px;
 padding:5px;
 color:blue">
 The parameter must contain a string that corresponds to the
-rules of the CSS language (Cascading Style Sheets).
+rules of the СSS language (Cascading Style Sheets).
 </div>
 </div>
 <div class="cont rb">
@@ -3708,7 +3942,7 @@ border-radius:3px;
 padding:5px;
 color:blue">
 The parameter must contain a string that corresponds to the
-rules of the CSS language (Cascading Style Sheets).
+rules of the СSS language (Cascading Style Sheets).
 </div>
 </div>
 <div class="cont rb">
@@ -3885,7 +4119,7 @@ The functionality of the method depends on the specified parameters. The followi
      
 - The *Value* parameter is undefined - in this case, the method returns a string containing  
    the value of the display property.   
-The following example use the '*content*', '*create*', '*css*', '*change*' and '*display*' methods.
+The following example use the '*content*', '*create*', '*css*', '*change*' and '*display*' methods.  
 Example for method *each* with *callback function(Element)*.  
 
 
@@ -4020,32 +4254,10 @@ showContent();
 ```
 
   
+  
      
-Example for method *each* with *callback function(Element, IndexOfElement)*.
+Example "Color picker" for method *each* with *callback function(Element, IndexOfElement)*.  
 
-```html
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src="CompactDOM.min.js"></script>
-<title>HTML Document</title>
-</head>
-<body>
-<div></div>
-<div></div>
-</body>
-<script>
-divContent = ["First Div", "Second Div"];
-divStyle = ["border:1px solid #FF0000", "border:1px dotted #0000FF;margin-top:10"];
-_("div").each(function(elementDiv, iDiv){
-  elementDiv.content(divContent[iDiv]);
-  elementDiv.style(divStyle[iDiv]);
-});
-</script>
-</html>
-```
-
-Example "Color picker" for method *each* with *callback function(Element, IndexOfElement)*.
 
 ```html
 <html>
@@ -4080,11 +4292,11 @@ input[type="color"] {
 </style>
 </head>
 <body>
-<div id="color_picker"></div>
 <input name="selbgc" id ="selbgc" type="hidden">
 </body>
 <script>
-_("#color_picker").create(5,{tag:"span", class:"bgc"});
+div = __.create(1,{tag:"div", id:"color_picker"});
+div.create(5,{tag:"span", class:"bgc"});
 colors = ["FFFFFF","F7F7F7","FFF8F7", "FFFDDE", "F9FEF6"];
 _(".bgc").each( (el, ind) => {
 	el.css("background-color:#"+colors[ind]);
@@ -4099,6 +4311,8 @@ _(".bgc").each( (el, ind) => {
 </script>
 </html>
 ```
+
+  
   
 ## 3.12 Method hide  
      
@@ -4330,7 +4544,79 @@ showContent();
 
   
   
-## 3.14 Method link  
+## 3.14 Method include  
+     
+This method includes the HTML document in the element specified by the selector.  
+The parameter is a string containing the filename or URL of the HTML document.  
+*_(selector).include(string file name);*
+
+or
+
+*_(selector).include(string URL-address);*
+     
+HTML document "sections/menu.html":  
+  
+
+
+```html
+<body>
+<style>
+.menuButton{
+	width: 1em;
+	max-width: 1em;
+	display: table-cell;
+	text-align: center;
+	line-height: 6px;
+	font-size: 30px;
+	white-space: pre;
+	cursor: pointer;
+	color: #aaa;
+	height: 30px;
+	caret-color : transparent;
+}
+/*.menuButton:hover{color: red}*/
+.menuButton:hover{
+border: 1px solid #F6F6F6;
+background-color: #F6F6F6;
+border-radius: 3px
+}
+</style>
+<p class="menuButton">
+&boxh;
+&boxh;
+&boxh;
+</p>
+</body>
+```
+  
+  
+     
+Example for method *include* includes HTML document to *div* element with *id="menu"*  
+  
+
+
+```html
+<html>
+<head>
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<style>
+#menu{cursor: none}
+</style>
+<script>
+__.ready( () => {
+  _("#menu").include("sections/menu.html");
+});
+</script>
+</head>
+<body>
+<div id="menu"></div>
+</body>
+</html>
+```
+
+  
+  
+## 3.15 Method link  
      
    This method allows one or more link elements to be created within the parent element  
 defined by the selector. If the selector is undefined, then the *document.head* selector is applied.  
@@ -4505,7 +4791,7 @@ showContent();
 
   
   
-## 3.15 Method lock  
+## 3.16 Method lock  
      
    This method allows the disabled and readOnly properties to be set on only one element.  
 *_(selector).lock(Parameter1, Parameter2);*  
@@ -4723,7 +5009,7 @@ showContent();
 
   
   
-## 3.16 Method modal  
+## 3.17 Method modal  
      
    The *modal* method allows to create several elements for a modal window.  
 *_(selector).modal(Content);*  
@@ -4762,22 +5048,20 @@ __.modal();
 </html>
 ```
 
+     
   
 - The parameter *Content* is *string*  - in this case, the method sets the content  
-   of the modal window and opens it. For example:
-
-   *_.modal("Your message has been successfully sent")*
-
-- The parameter *Content* is number - in this case, the method closes the modal window.
-	The parameter specifies the time in seconds after which the modal will be closed.
-  To close the modal window, the *CloseM* function is defined in the method.
-  This function can be called in any event handler method. If the function parameter is not defined in the
-  *click* method, then the <i>CloseM</i> function will be called by default. For example:
-
-   *_.modal(0)* -  closing  immediately
-
-   *_.modal(5)* - closing after 5 seconds
-
+   of the modal window and opens it. For example:  
+*_.modal("Your message has been successfully sent")*  
+  
+- The parameter *Content* is number - in this case, the method closes the modal window.  
+   The parameter specifies the time in seconds after which the modal will be closed.  
+  To close the modal window, the *CloseM* function is defined in the method.  
+  This function can be called in any event handler method. If the function parameter is not defined in the   
+  *click* method, then the *CloseM* function will be called by default. For example:  
+*_.modal(0)* -  сlosing  immediately  
+*_.modal(5)* - сlosing after 5 seconds  
+  
 Example for *modal* method  
 
 
@@ -4813,7 +5097,7 @@ EventHandlerFunction = function(){
 		break;
 
 		case "_3":
-		content = "Do you really want to continue?<br>";
+		content = "Do you really want to continue?<br>"; 
 		content += "<button class='YN'>Yes</button>";
 		content += "<button class='YN'>No</button>";
 		__.modal(content);
@@ -4829,10 +5113,10 @@ EventHandlerFunction = function(){
 	}
 	showContent();
 }
-showContent=function(){
+showContent=function(){	
 	cont = html.content();
-	cont = __.ins("><", cont, ">\n<");
-	contT.content(cont);
+	cont = __.ins("><", cont, ">\n<");	
+	contT.content(cont);	
 	contT.scroll("down");
 };
 _("button").click(EventHandlerFunction);
@@ -4857,7 +5141,7 @@ content = "Do you really want to continue?";<br>
 ...........<br>
 ...........<br>
 __.modal(content);<br>
-});
+}); 		
 </button><br>
 
 <div class="cont rb">
@@ -4866,8 +5150,10 @@ __.modal(content);<br>
 </body>
 </html>
 ```
+
   
-## 3.17 Method position  
+  
+## 3.18 Method position  
      
    The method allows you to set the position of the element in the center horizontally  
 and/or vertically and get the dimensions of the element and its position - top, left, right  
@@ -4997,7 +5283,7 @@ showPosition(_("#d_1"));
 
   
   
-## 3.18 Method prop  
+## 3.19 Method prop  
      
    This method allows you to manipulate the proprties of elements.   
 *_(selector).prop( Proprties, Value);*  
@@ -5127,7 +5413,7 @@ showContent();
 
   
   
-## 3.19 Method reload  
+## 3.20 Method reload  
      
    This method reloads the current document. The method is applied without a selector.   
 *__.reload();*  
@@ -5161,7 +5447,7 @@ _("button").click(EventHandlerFunction);
 
   
   
-## 3.20 Method script  
+## 3.21 Method script  
      
    This method allows one or more link elements to be created within the parent element  
 defined by the selector. If the selector is undefined, then the *document.head* selector is applied.  
@@ -5283,7 +5569,7 @@ showContent();
 
   
   
-## 3.21 Method selected  
+## 3.22 Method selected  
      
    This method is applicable only to the *select* element. The method allows   
 to set the *selectedIndex* property, the value of which is determined by the parameter,  
@@ -5360,9 +5646,9 @@ Disabled23();
 
   
   
-## 3.22 Method show  
+## 3.23 Method show  
      
-   The *show* method is intended to be applied in conjunction with the *hide*
+   The * show * method is intended to be applied in conjunction with the *hide*  
 method described above. This method is applicable to only one element.   
   
 *_(selector).hide(Duration);*  
@@ -5497,7 +5783,7 @@ showContent();
 
   
   
-## 3.23 Method style  
+## 3.24 Method style  
      
    This method is useful for manipulating the style attribute of elements. The method alias *style* is *css*.    
 *_(selector).css(Value);*  
@@ -5559,7 +5845,7 @@ border-radius:3px;
 padding:5px;
 color:blue">
 The parameter must contain a string that corresponds to the
-rules of the CSS language (Cascading Style Sheets).
+rules of the СSS language (Cascading Style Sheets).
 </div>
 </div>
 <div class="cont rb">
@@ -5647,7 +5933,7 @@ border-radius:3px;
 padding:5px;
 color:blue">
 The parameter must contain a string that corresponds to the
-rules of the CSS language (Cascading Style Sheets).
+rules of the СSS language (Cascading Style Sheets).
 </div>
 </div>
 <div class="cont rb">
@@ -5696,7 +5982,7 @@ showContent();
 
   
   
-## 3.24 Method tag  
+## 3.25 Method tag  
      
    This method returns the tag name of the element specified by the selector.  
 *_(selector).tag();*  
@@ -5728,7 +6014,7 @@ _("div").click(EventHandlerFunction);
 
   
   
-## 3.25 Method transition  
+## 3.26 Method transition  
      
    This method creates or stops a transition effect. Method *transition* alias name is *animate*.  
 *_(selector).transition(Properties, Duration, TimingFunction);*  
@@ -5924,7 +6210,7 @@ but.click(function(){
 
   
   
-## 3.26 Method val  
+## 3.27 Method val  
      
    It is allowed to apply this method only to elements for which the value property is supported.  
 The method allows you to set and get the value of the element specified by the selector.   
@@ -6185,7 +6471,7 @@ showValue();
 
   
   
-## 3.27 Method value  
+## 3.28 Method value  
      
    It is allowed to apply this method only to elements for which the value property is supported.  
 The method allows you to set and get the value of the element specified by the selector.   
@@ -6446,8 +6732,8 @@ showValue();
 
   
   
-### 3.28 send method  
-## 3.28.1 About the send method  
+# 3.29 send method
+## 3.29.1 About the send method  
      
    This method allows you to send html requests and return the received data.  
 In the examples, the *url* method will be used to determine the current *url address* and  
@@ -6581,11 +6867,8 @@ ArrayType([JavaScript typed arrays](https://developer.mozilla.org/de/docs/Web/Ja
 In this case, the ArrayType is determined by default based on the number of bytes required  
 for proper packing. One number, taking into account the sign and type of number (integer or  
 floating point). For string data, the default is one byte per character.  
-
-```
-The send method defines the _ArrayType variable, which can be used to get the original data
-from the arraybufer-object.
-```
+<pre>The send method defines the _ArrayType variable, which can be used to get the original data
+from the arraybufer-object.```
   
 For example:  
   
@@ -6715,7 +6998,7 @@ __.send(obj);*
 Attention!  
 If this property is undefined, but errors are detected in the PHP code,  
 the information in the console is also displayed.  
-## 3.28.2 Redirect and submit  
+## 3.29.2 Redirect and submit  
      
  This section will show examples of using the send method for redirecting and submitting forms.  
 The examples below will use the *send_demo.html* file and the *url* method, which will be used to  
@@ -6833,7 +7116,7 @@ _("button").each(function(elementButton, ib){
 
   
   
-## 3.28.3 POST XMLHttpRequest  
+## 3.29.3 POST XMLHttpRequest  
      
  This section will show examples of using the send method for the following *dataType* property values:  
 - "formData" (default);  
@@ -7303,7 +7586,7 @@ function clearPrevious(){
 
   
   
-## 3.28.4 PUT XMLHttpRequest  
+## 3.29.4 PUT XMLHttpRequest  
      
    This section will show examples of using the send method for  *formData* dataType.  
 The examples below will use:  
@@ -7362,7 +7645,7 @@ function clearPrevious(){
 
   
   
-## 3.28.5 GET XMLHttpRequest  
+## 3.29.5 GET XMLHttpRequest  
      
  This section will show examples of using the *send* method for the following *responseType* property values:  
 - "text"; (default);  
@@ -7714,7 +7997,7 @@ function clearPrevious(){
 
   
   
-## 3.28.6 DELETE XMLHttpRequest  
+## 3.29.6 DELETE XMLHttpRequest  
      
 This section will show example of using the send method with  propertis of parametr:  
 *url:"sections/ViewResponse.php?id=1",  
@@ -7859,8 +8142,17 @@ The method returns an object with the following properties:
 - wsc - width of screen;  
 - hsc - height of screen;  
 - dpr - devicePixelRatio;  
-- sor - suport orientation change;  
+- usa - userAgent;  
+- tou - true/false support screen touch;  
+- sor - true/false suport orientation change;  
+- opo - true: orientation is 'portrait', false: orientation is 'landscape' ;  
 - eor - event type 'orientationchange' or 'resize';  
+- dev - type of device number 0-4:  
+   0 - extra small devices (portrait phones, less than 576px)  
+   1 - small devices (landscape phones, 576px and up)  
+   2 - medium devices (tablets, 768px and up)  
+   3 - large devices (desktops, 992px and up)  
+   4 - extra large devices (large desktops, 1200px and up)  
   
 Example for method *env*.
 
@@ -7875,7 +8167,7 @@ Example for method *env*.
 <button>
 out = __.env();
 </button><br>
-<div id="cont" class="cont rb">
+<div id="cont" class="cont rb ova">
 </div>
 </body>
 <script>
@@ -7899,13 +8191,17 @@ showResult=function(out){
 		wsc:"width of screen",
 		hsc:"height of screen",
 		dpr:"devicePixelRatio",
+		usa:"userAgent",
+		tou:"support screen touch",
 		sor:"suport orientation change",
-		eor:"event type 'orientationchange'/'resize'"
+		opo:"orientation is 'portrait'",
+		eor:"event type 'orientationchange' or 'resize'",
+		dev: "type of device"
 	};
 	msg = "";	
 	for(prop in out)
 	{
-	  msg += showObj[prop] + ': out.' +prop+" = "  + out[prop]+"<br>";	 
+	  msg += showObj[prop] + ':<br>out.' +prop+" = "  + out[prop]+"<br>";
 	}			
 	cont.content(msg);	
 };
@@ -8706,17 +9002,14 @@ function clearPrevious(){
   
   
 ### 4.10 Check type methods  
-## 4.10.1 Check type method a - array
-
-*res= __.a(parameter)*
-
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-
-Examples for all datatype checking methods:
-
-Example 1. The name of the method is the same as the data type.
+## 4.10.1 Check type method a - array  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
+  
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
 
 ```html
 <html>
@@ -8826,69 +9119,710 @@ showResult=function(method){
 
   
   
-## 4.10.2 Check type method b - boolean
-
-*res= __.b(parameter)*
-
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
+## 4.10.2 Check type method b - boolean  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
   
-## 4.10.3 Check type method f - function
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
 
-*res= __.f(parameter)*
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
 
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
-
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
 
   
-## 4.10.4 Check type method n - number
+     
+Example2 The method name is different from data type.
 
-*res= __.n(parameter)*
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
 
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
 
   
-## 4.10.5 Check type method o - object
+  
+## 4.10.3 Check type method f - function  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
+  
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
 
-*res= __.o(parameter)*
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
 
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+     
+Example2 The method name is different from data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
   
   
-## 4.10.6 Check type method s - string
+## 4.10.4 Check type method n - number  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
+  
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
 
-*res= __.s(parameter)*
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
 
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+     
+Example2 The method name is different from data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
   
   
+## 4.10.5 Check type method o - object  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
   
-## 4.10.7 Check type method u - undefined
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
 
-*res= __.u(parameter)*
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
 
-This method checks the datatype of the parameter.
-If the method name matches the datatype of the parameter, the method return true,
-otherwise false.
-See examples in section 4.10.1
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+     
+Example2 The method name is different from data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+  
+## 4.10.6 Check type method s - string  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
+  
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+     
+Example2 The method name is different from data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+  
+## 4.10.7 Check type method u - undefined  
+     
+   This method checks the datatype of the parameter. If the method name matches the datatype  
+of the parameter, the method return true, otherwise false.  
+  
+Examples for all datatype checking methods:  
+  
+Example1. The name of the method is the same as the data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a( [1, 2, 3] ); //check array
+</button><br>
+<button>
+res = __.b(false); //check boolen
+</button><br>
+<button>
+func=function(){alert("Hello!")}; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n(25); //check number
+</button><br>
+<button>
+res = __.o({a:1,b:2}); //check object
+</button><br>
+<button>
+res = __.s("25"); //check string
+</button><br>
+<button>
+var par; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
+  
+     
+Example2 The method name is different from data type.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button>
+res = __.a(true); //check array
+</button><br>
+<button>
+res = __.b([1, 2, 3]); //check boolen
+</button><br>
+<button>
+func=25; res = __.f(func); //check function
+</button><br>
+<button>
+res = __.n("25"); //check number
+</button><br>
+<button>
+var par=1; res = __.o(par); //check object
+</button><br>
+<button>
+res = __.s(25); //check string
+</button><br>
+<button>
+var par=1; res = __.u(par); //check undefined
+</button><br>
+<div id="cont" class="cont rb"></div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");			
+//buttons events handler	
+EventHandlerFunction = function(){	
+	method =_(this).content();
+	eval(method);	
+	showResult(method);	
+}	
+_("button").click(EventHandlerFunction);
+
+showResult=function(method){	
+	msg = "<p>" + method.replace(";",";<br>") + '</p>res = ';	
+	msg += '"'+res+'"';	
+	cont.content(msg);	
+};
+</script>
+</html>
+```
+
   
   
 # 5. Appendixs
-## 5.1 Codes of tutorial  website
+## 5.1 Codes for this site
 ## 5.1.1 index.html  
   
 ```html  
@@ -8896,6 +9830,13 @@ See examples in section 4.10.1
 <meta charset=utf-8>
 <title>CompactDOM tutorial</title>
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PQMSMC8');</script>
+<!-- End Google Tag Manager -->
 <meta name="viewport" content="width=device-width, initial-scale=1, 
 maximum-scale=1, user-scalable=no, user-scalable=0" >
 <meta name="description" content="CompactDOM js library online-tutorial">
@@ -8908,6 +9849,14 @@ _("head").script("index.js");
 </script>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PQMSMC8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div>
+	<span class="head1">CompactDOM</span>
+	<span class="head2">Online-tutorial of the Java Script Library CompactDOM</span>
+</div>
 <div id="block-setting">
 <i id="setting" class="fas fa-cog"></i>
 	<div>
@@ -8919,10 +9868,9 @@ _("head").script("index.js");
 </div>
 <div class="CLB">
 	<div id="Sections"></div>
-	<div id="SectionsContent"></div>
+	<div id="SectionsСontent"></div>
 </div>
 <div class="footer"></div>
-</div>
 <script src="dist/rainbow.js"></script>
 <script src="src/language/generic.js"></script>
 <script src="src/language/html.js"></script>
@@ -8937,18 +9885,18 @@ _("head").script("index.js");
   
 ```json  
 {
-"content":
+"content":	
 {
 	"Preface":
 	{
-		"About CompactDOM tutorial":"AboutThisSite.html",
-		"What is the HTML DOM?":"WhatIsDOM.html",
+		"About CompactDOM tutorial":"AboutThisSite.html",	
+		"What is the HTML DOM?":"WhatIsDOM.html",	
 		"What is the CompactDOM?":"WhatIsCompactDOM.html",
 		"How it works?":"HowItworks.html",
 		"CompactDOM methods":"CompactDOMmethods.html",
 		"Selectors of DOM elements":"SelectorsDOMelements.html"
 	},
-
+	
 	"Events handler methods":{
 		"on":"on.html",
 		"blur":"blur.html",
@@ -8961,6 +9909,7 @@ _("head").script("index.js");
 		"keypress":"keypress.html",
 		"keyup":"keyup.html",
 		"load":"load.html",
+		"media":"media.html",
 		"mouseenter":"mouseenter.html",
 		"mouseleave":"mouseleave.html",
 		"ready":"load.html",
@@ -8968,7 +9917,7 @@ _("head").script("index.js");
 		"scroll":"scroll.html",
 		"submit":"submit.html"
 	},
-
+	
 	"Basic methods":
 	{
 		"animate":"animate.html",
@@ -8984,6 +9933,7 @@ _("head").script("index.js");
 		"each":"each.html",
 		"hide":"hide.html",
 		"ishide":"ishide.html",
+		"include":"include.html",
 		"link":"link.html",
 		"lock":"lock.html",
 		"modal":"modal.html",
@@ -9008,10 +9958,10 @@ _("head").script("index.js");
 			"DELETE XMLHttpRequest":"send6.html"
 		}
 	},
-
+	
 	"Auxiliary methods":
 	{
-		"ads":"ads.html",
+		"ads":"ads.html",	
 		"env":"env.html",
 		"esc":"esc.html",
 		"ins":"ins.html",
@@ -9024,7 +9974,7 @@ _("head").script("index.js");
 			"setToArrBuf":"setToArrBuf.html",
 			"getArrayType":"getArrayType.html",
 			"getFromArrBuf":"getFromArrBuf.html",
-			"setBlob":"setBlob.html"
+			"setBlob":"setBlob.html"			
 		},
 		"Check type methods":
 		{
@@ -9037,16 +9987,16 @@ _("head").script("index.js");
 			"u - undefined":"type.html"
 		}
 	},
-
+	
 	"Appendixs":
-	{
+	{		
 		"Codes for this site":
 		{
 			"index.html":"../index.html?code=html",
 			"index.json":"../index.json?code=json",
 			"index.js":"index_js.html",
 			"index.css":"../css/index.css?code=css"
-		},
+		},		
 		"Files in examples":
 		{
 			"GetResponse.php":"GetResponse.html",
@@ -9056,7 +10006,7 @@ _("head").script("index.js");
 			"content.css":"css/content.css?code=css",
 			"content.json":"content.json?code=json",
 			"content.txt":"content.txt?code=html"
-
+			
 		},
 		"CSS":
 		{
@@ -9065,9 +10015,12 @@ _("head").script("index.js");
 		},
 		"Predefined variables":"variable.html",
 		"CompactDOM projects":
-		{
+		{				
 			"CaesarCipher.js":"Projects/CaesarCipher.js",
-			"timeCalculator.js":"Projects/timeCalculator.js"
+			"timeCalculator.js":"Projects/timeCalculator.js",
+			"ColorPicker.js":"Projects/ColorPicker.js",
+			"CrossPoint.js":"Projects/CrossPoint.js",
+			"DeviceCheck.js":"Projects/DeviceCheck.js"
 		}
 	}
 },
@@ -9079,7 +10032,7 @@ _("head").script("index.js");
 		"Imprint":"Imprint.html",
 		"Contact":"Contact.php",
 		"Privacy":"Privacy.html"
-	},
+	},	
 	"soziale":
 	{
 		"fab fa-github-square":"https://github.com/VladimirKheifets/Java-Script-library-CompactDOM",
@@ -9087,7 +10040,7 @@ _("head").script("index.js");
 		"fab fa-twitter-square":"https://twitter.com/VladimirKheife1/status/1496851597049094144"
 	}
 }
-}
+}  
 ```  
 ## 5.1.3 index.js  
   
@@ -9206,7 +10159,7 @@ start=function()
 		key0_0 = Object.keys(data[key0])[0];
 		H1 = key0_0;
 		prvnextL = prvnext.length;
-		goContent(data[key0][key0_0]);
+		goContent(data[key0][key0_0]);		
 	};
 
 	var idc;
@@ -9331,11 +10284,11 @@ start=function()
 	goRainbow=function(rsp,to,req){
 		GET = __.url(1,req);
 		if(code=GET['code'])
-		{
+		{			
 			preff = '<div></div>';
 			preff += '<pre><code data-language="';
-			preff += code + '">';
-			rsp = preff + rsp + '</code></pre>';
+			preff += code + '">'; 
+			rsp = preff + rsp + '</code></pre>';		
 		}
 
 		["html","head","body"].forEach(function(tag)
@@ -9344,7 +10297,7 @@ start=function()
 			rsp = __.ins("</"+tag+">",rsp,"&lt;/"+tag+"&gt;");
 		});
 		//--------------------------------------------
-		ind = H1ToInd();
+		ind = H1ToInd();		
 		indP = ind - 1;
 		indN = ind + 1;
 		out=getTitle();
@@ -9428,8 +10381,8 @@ start=function()
 			goLink=function()
 			{
 				iReturn=ind;
-				H1=_(this).content();
-				i = H1ToInd();
+				H1=_(this).content();						
+				i = H1ToInd();				
 				url=prvnext[i][H1];
 				url=__.url("indR="+ind, url);
 				goContent(url);
@@ -9625,7 +10578,7 @@ function themeHref(light_theme){
 //defult light or dark theme
 	theme=(light_theme)?"github":"obsidian";
 	return "themes/css/"+theme+".css";
-};
+};  
 ```  
 ## 5.1.4 index.css  
   
@@ -9662,9 +10615,9 @@ function themeHref(light_theme){
         font-size: 45px;
 		text-shadow: 4px 4px 4px #aaa;
 		line-height: 1.25;
-		padding:0 2% 0 3%
+		padding:0 2% 0 3%		
       }
- .head2{margin-left:70px;font-size:30px}
+ .head2{margin-left:70px;font-size:30px}  
 
  body,div,.quote,button,.abutton,.prev,.next, input, textarea{
 		font-family: "Bebas Neue Book", Helvetica, sans-serif;
@@ -9675,7 +10628,7 @@ function themeHref(light_theme){
 	}
 
 button,.abutton, input, textarea, canvas {border-radius:5px;border:1px solid #aaa}
-button,.abutton {cursor:pointer}
+button,.abutton {cursor:pointer}	
 button:hover,.abutton:hover{background-color:#B4FFFF}
 a:not([href]){text-decoration:underline;cursor:pointer;color:blau !important}
 a{cursor:pointer}
@@ -9691,7 +10644,7 @@ a{cursor:pointer}
 #Sections{
 	width:250px;
 	height:auto;
-	background-color:#FCFCFC;
+	background-color:#FCFCFC;	
 	padding:0 0 40px 10px
 	}
 #Sections span{
@@ -9719,7 +10672,7 @@ a{cursor:pointer}
 	height:auto;
 	text-align:right;
 	padding:15px 15px 20px 15px;
-	background-color:white;
+	background-color:white;	
 	z-index:10;
 }
 #block-setting div{text-align:left}
@@ -9744,7 +10697,7 @@ width:33%;
 .row div p{
 width:30%;
 cursor:pointer;
-display: table-cell;
+display: table-cell; 
 }
 
 .prev{text-align:left}
@@ -9788,8 +10741,8 @@ display: table-cell;
 .imprint p{text-align:right}
 .imprint div{text-align:left}
 
-.contact,.policy{
-	padding:0 20 0 20;
+.contact,.policy{	
+	padding:0 20 0 20; 
 	height:auto
 }
 .contact div{padding:5 0 5 0;display:block}
@@ -9805,26 +10758,26 @@ display: table-cell;
 .policy div{padding:0 0 10 0;margin:0;text-align:justify}
 
 #captcha{text-align:left;padding:0 0 0 0}
-#captcha + td{padding:0 10 0 10}
+#captcha + td{padding:0 10 0 10} 
 #captcha + td + td input{width:130px;padding:0 6 0 6}
 canvas{
-  pointer-events:none;
-}
+  pointer-events:none;   
+}  
 ```  
-
-## 5.2 Files from examples
-## 5.2.1 GetResponse.php
+# 5.2 Files in examples
+## 5.2.1 GetResponse.php  
+     
+  
 
 
 ```php
-
 echo file_get_contents('php://input');
-
 ```
 
   
   
-## 5.2.2 ViewResponse.php
+## 5.2.2 ViewResponse.php  
+     
 
 
 ```php
@@ -9933,6 +10886,7 @@ button > div{padding-bottom:10px}
 button p{white-space: pre;margin-block:0}
 .rb{border:1px solid #aaa;border-radius:5px;padding:5;min-height:20px}
 .cont{position:fixed;top:10;right:20;width:280px;padding-bottom:20px}
+.ova{overflow: auto;height:260px}
 .cr{color:Violet}
 .f16{font-size:16px}
 #contT{border:0;width:100%;height:220px}
@@ -9964,7 +10918,7 @@ label input{margin-left:5px}
 <p><b>send</b> method sends XMLHttpRequest: <br>
 <b>sections/content.txt</b><p>  
 ```  
-## 5.3 CSS
+# 5.3 CSS
 ## 5.3.1 CSS for scroll method  
      
 See above  *scroll* method.
@@ -10019,7 +10973,7 @@ See above *modal* method
 <style>
 .modal{
 	position:absolute;
-	z-index:9999;
+	z-index:1;
 	top:0;
 	left:0;
 	background-color: #ffffff;
@@ -10036,13 +10990,12 @@ See above *modal* method
 }
 
 .modal_close{
-	font-family: Courier;
 	color:#aaa;
 	cursor:pointer;
 	font-size:50px;
 	position:absolute;
-	right:0px;
-	top:0px;
+	right:0;
+	top:0;
 	margin:-0.2em 0.3em 0 0;
 	caret-color:transparent;
 	width: 20px;
@@ -10052,6 +11005,7 @@ See above *modal* method
 {color:#FFCCD9;caret-color:transparent;}
 
 .modal_gray_layer{
+	z-index: 9998;
 	position:fixed;
 	top:0px;
 	left:0px;
@@ -10080,8 +11034,8 @@ _pcy = "center-x";
 _und = undefined;
 ```
   
-## 5.5 CompactDOM projects
-## 5.5.1 CaesarCipher script
+# 5.5 CompactDOM projects
+## 5.5.1 CaesarCipher.js  
      
 
 
@@ -10192,7 +11146,7 @@ __.ready(start);
 ```
 
   
-## 5.5.2 timeCalculator script
+## 5.5.2 timeCalculator.js  
      
 
 
@@ -10363,12 +11317,12 @@ __.modal();
 </script>
 ```
 
-## 5.5.3 colorPicker script
-
+  
+## 5.5.3 ColorPicker.js  
+     
 
 
 ```html
-<script>
 /*
 
 Color Picker
@@ -10401,13 +11355,13 @@ __.ready( () => {
 	/*
 	The 'create' method creates a child element 'title' in the parent element 'head'
 	<title>Color picker</title>
-	*/
+	*/	
 	head.create( "Color picker", {tag:"title"} );
 
 	/*
-	The 'link' method with default selelector 'head' creates  two child
-	elements 'link' in the parent element 'head'
-	<link href="css/index.css" rel="stylesheet" type="text/css">
+	The 'link' method with default selelector 'head' creates  two child 
+	elements 'link' in the parent element 'head'	
+	<link href="css/index.css" rel="stylesheet" type="text/css">	
 	<link href="css/modal.css" rel="stylesheet" type="text/css">
 	*/
 	__.link("css/index.css,css/modal.css");
@@ -10431,7 +11385,7 @@ __.ready( () => {
 	});
 
 	/*
-	The 'create' method with default selelector 'body' creates a child element 'div'
+	The 'create' method with default selelector 'body' creates a child element 'div' 
 	in the parent element 'body' and defining 'div' element
 	<div align="center"></div>
 	*/
@@ -10663,8 +11617,11 @@ __.ready( () => {
 </script>
 ```
 
-## 5.5.4 crossPoint script
+  
+## 5.5.4 CrossPoint.js  
+     
 
+<div></div>
 
 ```html
 <script>
@@ -10692,45 +11649,65 @@ __.ready(() => {
   head = _("head");
   title = "Calculate crossing point of two straight lines or line segments";
   head.create( title, {tag:"title"} );
+  head.create(1,{ tag:"meta", charset:"utf-8" });
+  head.create(1,
+  {
+    tag:"meta",
+    name:"viewport",
+    content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0"
+  });
   __.link("css/index.css,css/modal.css,css/button_to_up.css");
   ctx = [];
   lay = [];
   lines = {};
   inp = _("input");
   lab = _("label");
-
+  Env = __.env();
+  //------------------------------------------------
+  __.on(Env.eor, ev => { __.reload();});
+  //------------------------------------------------
   colors = {1:"blue", 2:"purple", 3:"red"};
-  canvasWidth = 800;
-  canvasHeight = 400;
+  canvasWidthD = [300,400,500,600,860];
+  canvasHeightD = [300,300,300,400,400];
+  //alert(whU["w"]+"/"+Win+"\n"+whU["h"]+"/"+Hin + "/"+ idd);
+  canvasWidth = canvasWidthD[Env.dev];
+  canvasHeight = canvasHeightD[Env.dev];
   gridCell = 10;
   X0 = canvasWidth/2 - 1;
   Y0 = canvasHeight/2 - 1;
 
   main = _("main");
-  main.create(title, {add:"befor",tag:"header"});
-  d = new Date();
-  year = d.getFullYear();
-  footer = "<p>&copy; </p>" + year + " Alto Booking"
-  main.create(footer, {add:"after",tag:"footer"});
+  mainCanvasSt = "width:"+canvasWidth+"px;height:"+canvasHeight+"px"
+  main.css(mainCanvasSt);
+  _("header h1").content(title);
 
+  //-- canvas -------------------------------------------------------
   main.create(3,
     {
       tag: "canvas",
       id: "lay",
       width: canvasWidth,
-      height: canvasHeight
+      height: canvasHeight,
+      style:mainCanvasSt
     });
-
   elCanvas = _("canvas");
-
-  _("main div").each((el,ind) => {
-    i = ind + 1;
-    el.css("color:" + colors[i]);
-    el.attr("id","dL"+i);
+  //---LINE div --------------------------------------
+    _("header div").each((el,ind) => {
+      i = ind + 1;
+      el.css("color:" + colors[i]);
+      el.attr("id","dL"+i);
   });
 
-  nav = __.create(1, {tag:"nav"});
 
+  //-- footer -------------------------------------------------------
+  d = new Date();
+  year = d.getFullYear();
+  footer = "<p>&copy; </p>" + year + " Alto Booking"
+  footerSt="margin-top:"+ (canvasHeight+20) + "px";
+  main.create(footer, {add:"after",tag:"footer"});//, style:footerSt
+  //------------------------------------------------------------------
+
+  nav = __.create(1, {tag:"nav"});
   nav.create(
     [
       "Help",
@@ -10747,9 +11724,28 @@ __.ready(() => {
     }
   );
 
-  res = nav.create(1,{tag:"p"});
+  navHide = () =>{if(Env.dev<3) nav.hide();};
+  if(Env.dev < 3)
+  {
+    menu  = main.create(1, {add:"after",tag:"div", id:"menu"});
+    menu.include("menu.html");
+
+    nav.hide();
+    menu.click(()=>{
+      if(nav.ishide())
+        nav.show();
+      else
+        nav.hide();
+      if(!res.ishide())
+        res.hide(100);
+    });
+  }
+  res = __.create(1,{tag:"p"});
   res.css("height:55px");
   res.hide(100);
+
+ navHide = () =>{if(Env.dev<3) nav.hide();};
+
 
   i=1;
   while(i<3)
@@ -10767,11 +11763,9 @@ __.ready(() => {
         "value" : ind+1
       }
       );
-      //if(ind == 0) el.attr("checked", true);
     });
     i++;
   }
-
 
   // Defining canvas & layots
   elCanvas.each((el,ind) => {
@@ -10780,6 +11774,8 @@ __.ready(() => {
     el.css("z-index:" + ind);
   });
 
+  navCSS = "top:"+(_("header").position().top+10)+"px";
+  nav.css(navCSS);
 
   startSetting = () => {
     pXY = {
@@ -10854,7 +11850,7 @@ __.ready(() => {
     x1Y = cansasW/2;
     y1Y = x1X+10;
     x2Y = x1Y;
-    y2Y = x1Y - 10;
+    y2Y = cansasH - 10;
     drawingLine(c, x1Y, y1Y, x2Y, y2Y, color);
     drawingLine(c, x2Y+5, y1Y+10, x1Y, y1Y, color);
     drawingLine(c, x2Y-5, y1Y+10, x1Y, y1Y, color);
@@ -10891,7 +11887,7 @@ __.ready(() => {
     c.stroke();
   };
 
-  clearCanvas = (c) => {c.clearRect(0, 0, 800, 400)};
+  clearCanvas = (c) => {c.clearRect(0, 0, canvasWidth, canvasHeight)};
 
   butShowHide = (s) => {
     i = 2;
@@ -10991,7 +11987,8 @@ __.ready(() => {
     };
   };
 
-  elCanvas.on('mousedown', (e) => {
+  elCanvas.on('click', (e) => { //mouseclick or touchstart
+    navHide();
     ePoint(e);
     if(Drawing[ind])
     {
@@ -11024,6 +12021,7 @@ __.ready(() => {
   });
 
   elCanvas.on('mousemove', (e) => {
+    navHide();
     ePoint(e);
     if(Drawing[ind])
     {
@@ -11051,8 +12049,10 @@ __.ready(() => {
       if(val === 2)
       {
         ABC1 = getlineABC(pXY[i]);
-        ABC2a = getlineABC([-400, -200, -400, 200]);
-        ABC2b = getlineABC([400, -200, 400, 200]);
+        cHalbW = canvasWidth/2;
+        cHalbH = canvasHeight/2;
+        ABC2a = getlineABC([-cHalbW, -cHalbH, -cHalbW, cHalbH]);
+        ABC2b = getlineABC([cHalbW, -cHalbH, cHalbW, cHalbH]);
         XYca = crossPoint(ABC1, ABC2a);
         XYcb = crossPoint(ABC1, ABC2b);
         drawingLine(ctx[i], XYca[0], XYca[1],  XYcb[0], XYcb[1], colors[i]);
@@ -11151,13 +12151,13 @@ __.ready(() => {
       if(gridOn)
       {
         gridOn = false
-        drawingAxes(800, 400, ctx[0], "#aaa");
+        drawingAxes(canvasWidth, canvasHeight, ctx[0], "#aaa");
       }
       else
       {
         gridOn = true;
-        drawingGrid(800, 400, 10, ctx[0], "#ddd");
-        drawingAxes(800, 400, ctx[0], "#aaa");
+        drawingGrid(canvasWidth, canvasHeight, 10, ctx[0], "#ddd");
+        drawingAxes(canvasWidth, canvasHeight, ctx[0], "#aaa");
       }
       break;
 
@@ -11224,6 +12224,7 @@ __.ready(() => {
       startSetting();
       break;
     }
+    navHide();
   });
 
   //----------------------------------------------
@@ -11236,3 +12237,94 @@ __.ready(() => {
  });
 </script>
 ```
+
+  
+  
+</code>  
+</pre>  
+## 5.5.5 DeviceCheck.js  
+     
+
+
+```html
+<script>
+/*
+
+DeviceCheck
+
+CompactDOM script
+
+Version: 1.0
+
+Author: Vladimir Kheifets (kheifets.vladimir@online.de)
+
+Copyright ©2022 Vladimir Kheifets All Rights Reserved
+
+Online-tutorial of the Java Script Library CompactDOM:
+https://www.alto-booking.com/developer/CompactDOM/
+
+CompactDOM on GitHub:
+https://github.com/VladimirKheifets/Java-Script-library-CompactDOM
+
+*/
+
+__.ready(() => {
+  env = __.env();
+  __.on(env.eor, e => {__.reload()});
+  getDictionary = (dic) => {
+    head = _("head");
+    body = _("body");
+    head.create( dic[0], {tag:"title"} );
+    head.create(1,{ tag:"meta", charset:"utf-8" });
+    head.create(1,
+    {
+      tag:"meta",
+      name:"viewport",
+      content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0"
+    });
+    __.link("css/index.css,css/modal.css,css/button_to_up.css");
+
+    header = body.create(1, {tag:"header"});
+    header.create(dic[0], {tag:"h1"});
+    main = body.create(1,{tag:"main"});
+    show = main.create(1,{tag:"div"});
+    d = new Date();
+    year = d.getFullYear();
+    footer = "<p>&copy; </p>" + year + " Alto Booking";
+    main.create(footer, { add:"after", tag:"footer"} );
+    S = ["<br>", "&nbsp;", ": ", ", ","px"];
+    S[5] = S[1].repeat(3);
+    showDeviceInfo = (env, dic) => {
+      msg = dic[5][env.dev]+S[0];
+      ori = (env.opo)?2:1;
+      YN = env.tou?3:4;
+      msg += dic[2][0]+S[1]+dic[2][2]+S[2]+dic[2][YN]+S[0];
+      YN = env.sor?3:4;
+      msg += dic[2][0]+S[1]+dic[2][1]+S[2]+dic[2][YN]+S[5]+S[0];
+      msg += dic[1][0]+S[2]+dic[1][ori]+S[0];
+      if(env.sor)
+       msg +=  dic[2][5]+S[0];
+      msg += dic[3][0]+S[2]+dic[3][2]+S[1]+env.wsc+S[4]+S[3]+dic[3][3]+S[1]+env.hsc+ S[4]+S[0];
+      msg += dic[3][1]+S[2]+dic[3][2]+S[1]+env.wbr+S[4]+S[3]+dic[3][3]+S[1]+env.hbr+ S[4]+S[0];
+      msg += dic[4]+S[2]+S[0]+env.usa;
+      show.content(msg);
+    }
+    showDeviceInfo(env, dic);
+};
+__.send(
+  {
+    url:"dictionary/en.json",
+    method:"get",
+    requestType:"json",
+    responseType:"json",
+    func:getDictionary
+  });
+__.modal();
+__.scroll();
+});
+</script>
+```
+
+  
+</code>  
+</pre>  
