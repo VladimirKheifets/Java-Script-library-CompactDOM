@@ -71,6 +71,7 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 3.29.4 PUT XMLHttpRequest  
 3.29.5 GET XMLHttpRequest  
 3.29.6 DELETE XMLHttpRequest  
+3.29.7 Synchronous XHR  
   
 ## 4. Auxiliary methods  
 4.1 Method ads  
@@ -81,21 +82,23 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 4.6 Method sid  
 4.7 Method sob  
 4.8 Method url  
+4.9 Method setBlob  
+4.10 Method laSelector  
+4.11 Method getDictionary  
   
-## 4.9 Arraybufer methods  
-4.9.1 setToArrBuf  
-4.9.2 getArrayType  
-4.9.3 getFromArrBuf  
-4.9.4 setBlob  
+## 4.12 Arraybufer methods  
+4.12.1 setToArrBuf  
+4.12.2 getArrayType  
+4.12.3 getFromArrBuf  
   
-## 4.10 Check type methods  
-4.10.1 a - array  
-4.10.2 b - boolean  
-4.10.3 f - function  
-4.10.4 n - number  
-4.10.5 o - object  
-4.10.6 s - string  
-4.10.7 u - undefined  
+## 4.13 Check type methods  
+4.13.1 a - array  
+4.13.2 b - boolean  
+4.13.3 f - function  
+4.13.4 n - number  
+4.13.5 o - object  
+4.13.6 s - string  
+4.13.7 u - undefined  
   
 ## 5. Appendixs  
   
@@ -104,6 +107,8 @@ Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved
 5.1.2 index.json  
 5.1.3 index.js  
 5.1.4 index.css  
+5.1.5 modal.css  
+5.1.6 selLanguages.css  
   
 ## 5.2 Files in examples  
 5.2.1 GetResponse.php  
@@ -224,7 +229,6 @@ window or as the HTML source. But it is the same document in both cases.
 The Document Object Model (DOM) represents that same document so it can be manipulated. 
 The DOM is an object-oriented representation of the web page, which can be modified with 
 a scripting language such as JavaScript.
-
 ```
   
      
@@ -329,7 +333,7 @@ For example, there is an HTML document with Java Script:
 simplify manipulating DOM elements. One character *_* is alias name *CompactDOM* object.  
 The current version of CompactDOM can be downloaded from [GitHub](https://github.com/VladimirKheifets/Java-Script-library-CompactDOM)  
 Browser support: Chrome 4.0, Internet Explorer 10.0, Edge,Firefox 3.5, Safari 3.2, Opera 10.0  
-Size of the current version (file CompactDOM.min.js) 15Kb  
+Size of the current version (file CompactDOM.min.js) 16Kb  
   
 Consider an example of code implemented with CompactDOM   
   
@@ -2434,13 +2438,15 @@ specified by the second parameter.
    the value of which specifies the name of the attribute to be removed.  
    It is allowed to specify the names of several attributes separated by commas.  
    For example Attribute object:
-   ```js
+
+	```
    {
       width : "100",  
       height : "200",  
       rem : "readonly, placeholder"  
    }
-  ```
+	```
+  
 Here the examples will use the *css*, *ishide* and *content* methods, which will be described below.  
 Example 1. Method attr.  
 
@@ -2622,15 +2628,16 @@ specified by the second parameter.
    In this case, the method sets several attributes. The pseudo-attribute "*rem*" is allowed,   
    the value of which specifies the name of the attribute to be removed.  
    It is allowed to specify the names of several attributes separated by commas.  
+
    For example Attribute object:
-   ```js
-   {
-      width : "100",
-      height : "200",
-      rem : "readonly, placeholder"
+   ```
+   {  
+      width : "100",  
+      height : "200",  
+      rem : "readonly, placeholder"  
    }
   ```
-  
+
 Here the examples will use the *css*, *ishide* and *content* methods, which will be described below.  
 Example 1. Method attr.  
 
@@ -3015,15 +3022,13 @@ and sets the received HTML content of an element.
 - parameter *Content undefined*, - in this case, the method returns the HTML content of the element.   
   
 The example below will use the following files:  
-Text file *sections/content.txt*  
+Text file *sections/content.txt*
 
-
-```html
-<p>the method <b>content</b> sends an AJAX Request <b>
+```
+html<p>the method <b>content</b> sends an AJAX Request <b>
 sections/content.txt</b> and sets the received HTML
 content of an element.</p>
 ```
-  
      
 PHP file *sections/content.php*  
 
@@ -3032,11 +3037,8 @@ echo "<p>the method <b>content</b> sends an AJAX Request <b>"
 ,$_SERVER['SCRIPT_NAME'],"</b> and sets the received HTML
 content of an element.</p>";
 ```
-  
      
-Example for method content.  
-</code>  
-
+Example for method content.
 
 ```html
 <html>
@@ -3105,14 +3107,13 @@ any other CompactDOM methods can be applied.
 *newSelector = _(selector).create( Data, Attributes )*;  
 or to create multiple related elements, for example, parent and child elements   
 *_(selector).create( Data, Attributes ).create( Data, Attributes )...*;  
-   The *Data</i parameter> contains the datas of the created elements or their number. Depending on the   
+   The *Data* parameter> contains the datas of the created elements or their number. Depending on the
 types of elements to create, this parameter can contain an array or an object.  
 If the parameter is an *array*, then the value of each element of the array will be inserted into the content  
 of each created html element.  
 For example, *Data = ["Apple","Orange","Grape"]* to create three option elements:   
 
-```html
-<option>Apple</option>
+```html<option>Apple</option>
 <option>Orange</option>
 <option>Grape</option>
 ```
@@ -3121,8 +3122,7 @@ if the parameter is an *object*, then each property of that object will be used 
 element being created, and the property value will be used to set the content of the element.  
 For example, *Data = {1:"Apple",2:"Orange",3:"Grape"}* to create three option elements:   
 
-```html
-<option value="1">Apple</option>
+```html<option value="1">Apple</option>
 <option value="2">Orange</option>
 <option value="3">Grape</option>
 ```
@@ -4548,11 +4548,9 @@ showContent();
      
 This method includes the HTML document in the element specified by the selector.  
 The parameter is a string containing the filename or URL of the HTML document.  
-*_(selector).include(string file name);*
-
-or
-
-*_(selector).include(string URL-address);*
+*_(selector).include(string file name);*  
+or  
+*_(selector).include(string URL-address);*  
      
 HTML document "sections/menu.html":  
   
@@ -4588,6 +4586,7 @@ border-radius: 3px
 </p>
 </body>
 ```
+
   
   
      
@@ -6732,7 +6731,7 @@ showValue();
 
   
   
-# 3.29 send method
+## 3.29 send method  
 ## 3.29.1 About the send method  
      
    This method allows you to send html requests and return the received data.  
@@ -6774,6 +6773,7 @@ the method sends data over *XMLHttpRequest*. The following *properties* are allo
 - func;  
 - to;  
 - debug;  
+- async;  
   
 A. *url* property - null or string.  
 If the property is not defined(null), then the request url is set by the value of  
@@ -6998,6 +6998,56 @@ __.send(obj);*
 Attention!  
 If this property is undefined, but errors are detected in the PHP code,  
 the information in the console is also displayed.  
+  
+K. *async* property - true or false.  
+If the value is true or undefined, then the method will send an asynchronous request and  
+return the response to the callback function or to the content of the element,  
+otherwise, the method will send *Synchronous XHR* and return a response.  
+Example for Asynchronous XMLHttpRequest(XHR):
+
+
+```html
+<html>
+<script>
+myFunc = (rsp)=>{
+  console.log(rsp);
+};
+
+obj =
+{
+  url:"sections/content.txt",
+  method:"get",
+  async:true //or is this property undefined
+  func:myFunc(rsp)
+}
+__.send(obj);
+</script>
+</html>
+```
+
+  
+  
+  
+     
+Example for Synchronous XMLHttpRequest(XHR) :
+
+```html
+<html>
+<script>
+obj =
+{
+  url:"sections/content.txt",
+  method:"get",
+  async:false
+}
+rsp = __.send(obj);
+console.log(rsp);
+</script>
+</html>
+```
+
+  
+  
 ## 3.29.2 Redirect and submit  
      
  This section will show examples of using the send method for redirecting and submitting forms.  
@@ -8056,6 +8106,60 @@ function clearPrevious(){
 
   
   
+## 3.29.7 Synchronous XHR  
+     
+This section will show example of using the send method with property: *async:false*  
+  
+The example below will use *content.txt* file;  
+Example.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button id="_1">
+<div>Demo for Synchronous XHR url:"sections/content.txt" and  method:"get"</div>
+<p>obj=
+ {
+   url:"sections/content.txt",
+   method:"get",
+   async:false
+ }
+rsp = __.send(obj);
+_("#cont").content(rsp)
+</p>
+</button><br>
+<div id="contF">
+</div>
+<div id="cont" class="cont rb">
+</div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");
+contF = _("#contF");
+//buttons events handler
+EventHandlerFunction = function(){
+  _(this).css("height:30px");
+  clearPrevious();
+  code=_("#"+this.id+" p").content();  
+  eval(code); 
+}
+_("button").click(EventHandlerFunction);
+function clearPrevious(){
+  cont.content("");
+  contF.content("");
+}
+</script>
+</html>
+```
+
+  
+  
 ## 4. Auxiliary methods  
 ## 4.1 Method ads  
      
@@ -8732,8 +8836,320 @@ showResult=function(method){
 
   
   
-### 4.9 Arraybufer methods  
-## 4.9.1 Method setToArrBuf  
+## 4.9 Method setBlob  
+     
+ This method is used to pack the originalData into an [blob-object](https://developer.mozilla.org/en-US/docs/Web/API/Blob).  
+  
+*blobObject = __.setBlob(originalData, MIME_Type);*  
+  
+originalData:  
+- text;  
+- binary data;  
+  
+The example below will use:  
+- *link* method to include *content.css* css-file;  
+- *create* method;  
+- *content* method;  
+  
+Example for originalData - 'Hello World!' and MIME type - 'text/plain'.  
+In this example, the setBlob method converts data with a 'text/plain' mime type into a blob-object.  
+The myFunction function converts a blob-object to a string.
+
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>HTML Document</title>
+</head>
+<body>
+<button id="_1">
+<div>demo with originalData = 'Hello World!' and MIME_Type = 'text/plain'</div>
+<p>
+blobObject = __.setBlob('Hello World!', 'text/plain');
+myFunction(blobObject);
+</p>
+</button>
+<div id="contF">
+</div>
+<div id="cont" class="cont rb">
+</div>
+</body>
+<script>
+__.link("sections/css/content.css");
+cont = _("#cont");
+contF = _("#contF");
+myFunction = function(blobObject){
+  console.log(blobObject);
+  reader = new FileReader();
+  reader.addEventListener('loadend', (e) => {
+  text = e.srcElement.result;
+  cont.content(text);
+  });
+  reader.readAsText(blobObject);
+};
+//buttons events handler
+EventHandlerFunction = function(){
+  _(this).css("height:30px");
+  clearPrevious();
+  code=_("#"+this.id+" p").content();
+  eval(code);
+}
+_("button").click(EventHandlerFunction);
+function clearPrevious(){
+  cont.content("");
+  contF.content("");
+}
+</script>
+</html>
+```
+
+  
+  
+## 4.10 Method laSelector  
+     
+  
+Тhis method creates a language selector on the website.  
+The *laSelector* method is intended to be used in conjunction with the *modal* and *getDictionary* methods.  
+To use the *laSelector* method, you need to include *modal.css* and *selLanguages.css*  using the *link* method:  
+*__.link("css/modal.css,css/selLanguages.css");*  
+  
+For *laSelector* and g*etDictionary* methods, a directory must be created on the server,  
+for example "*languages*".  
+A file must be created in this directory, for example "*selLanguages.txt*" containing codes and names of languages.  
+This file must have the following structure: *#ISO2 code~language name*  
+  
+*languages/selLanguages.txt* file as an example for this section:  
+```
+#de~Deutsch
+#en~English
+#ru~Русский
+#zh~中文
+```
+The *languages* directory must contain  subdirectories with names, which must necessarily
+match the ISO2 codes of the supported languages.  
+Each of these subdirectories must contain a file, for example *dictionary.txt*,
+having the structure:  
+```
+#key~value*
+or  
+*#key~value1~value2~value3...
+```
+Values can contain multiline text and html tags. The number of values is not limited.  
+  
+*languages/en/dictionary.txt* file as an example for this section:  
+
+```
+html  #info~On April 23, 1516, the Bavarian Duke Wilhelm IV issued a purity law
+about the purity of the beer, which has applied throughout Germany since 1919.
+The Purity Law states that it is permitted for the preparation of beer
+only with <b>malt, hops, yeast and water</b>.
+#question~Do you like Bavarian beer?
+#buttons~yes~no~didn't try
+```
+  
+     
+ Method calls:  
+A.The *laSelector* method must be called twice.  
+The first time the method must be called with at least one parameter,  
+and always before calling the *getDictionary* method.  
+  
+*__.laSelector(laDefault, dir, laListeFile);*  
+  
+Method parameters:  
+-  *laDefault* - string, defines the iso2 code of the first language;  
+-  *dir* - string or null, defines the language directory, default is "languages";  
+-  *laListeFile* - string or null, specifies the name of a file containing a  
+  list of supported languages, by default "selLanguages.txt";  
+  
+On the first call, the method defines the variables  *_la* and *_dirLa*:  
+-  *_la* is the iso2 code of the selected (active) language.  
+-  *_dirLa = dir+"/"+_la*, where the variable dir contains the name of directories  
+  on the server that contain subdirectories for each supported language.  
+  
+B.The second time the *laSelector* method must be called without parameters,  
+but the *modal* method must be called earlier.  
+
+*__.modal();*
+
+*__.laSelector();*
+  
+In this case laSelector method creates:  
+-  a div element in the body of the current document;  
+-  the content (name for the current language)for this element;  
+-  click event handler for the element.  
+Clicking on this element opens a modal window containing a list of language names.  
+By clicking on the name of the language, the current page is reloaded with the addition  
+in URL of the GET[la] parameter , containing the iso2 code of the selected language.  
+The actual language is determined by the GET[la] parameter from URL, or, if the parameter  
+is absent, or the default language name will be used.  
+  
+Example (In this example, the *create* method is applied )
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>Demo for laSelector method</title>
+<script>
+//set the iso2 code of the first language - "en"(english)
+//define the variables _la, _dirLa for the current language
+__.laSelector("en");
+//define the dic object
+dic = __.getDictionary(_dirLa);
+__.ready(()=>{
+//include CSS
+__.link("css/laSelectorDemo.css,../css/modal.css,../css/selLanguages.css");
+//create one div element in the body with content from dic.info
+__.create(dic.info, {tag:"div", class:"info"});
+//create the div2 div element in the body with
+div2 = __.create(1, {tag:"div", class:"info"});
+//create one h3 element in the div2 with content from dic.question
+div2.create(dic.question, {tag:"h3"});
+//create 3 button element in the div2 with content from array dic.buttons
+div2.create(dic.buttons, {tag:"button"});
+//create  html-code for modal window
+__.modal();
+//create modal html-code for language selector
+__.laSelector();
+});
+</script>
+</head>
+<body>
+</body>
+</html>
+```
+  
+[Try it](https://www.alto-booking.com/developer/CompactDOM/sections/laSelectorDemo.html)
+
+## 4.11 Method getDictionary  
+     
+  
+This method creates an object containing texts in the current language.  
+The *getDictionary* method is intended to be used in conjunction with the *modal* and *laSelector* methods.  
+To use the *laSelector* method, you need to include *modal.css* and *selLanguages.css*  using the *link* method:  
+*__.link("css/modal.css,css/selLanguages.css");*  
+  
+For *laSelector* and g*etDictionary* methods, a directory must be created on the server,  
+for example "*languages*".  
+A file must be created in this directory, for example "*selLanguages.txt*" containing codes and names of languages.  
+This file must have the following structure: *#ISO2 code~language name*  
+  
+*languages/selLanguages.txt* file as an example for this section:  
+```
+#de~Deutsch
+#en~English
+#ru~Русский
+#zh~中文
+```
+  
+The "*languages*" directory must contain  subdirectories with names, which must necessarily  
+match the ISO2 codes of the supported languages.  
+Each of these subdirectories must contain a file, for example "*dictionary.txt*",  
+having the structure:  
+```
+#key~value
+or  
+*#key~value1~value2~value3...
+```
+
+Values can contain multiline text and html tags. The number of values is not limited.  
+  
+*languages/en/dictionary.txt* file as an example for this section:  
+
+```html
+#info~On April 23, 1516, the Bavarian Duke Wilhelm IV issued a purity law
+about the purity of the beer, which has applied throughout Germany since 1919.
+The Purity Law states that it is permitted for the preparation of beer
+only with <b>malt, hops, yeast and water</b>.
+#question~Do you like Bavarian beer?
+#buttons~yes~no~didn't try
+```
+     
+The *getDictionary* method must be called after the first calling the *laSelector*  
+method, which determines the iso2 code of the current language and the the variables  
+*_la* and *_dirLa*:  
+-  *_la* is the iso2 code of the selected (active) language.  
+-  *_dirLa = dir+"/"+_la*, where the variable dir contains the name of directories  
+  on the server that contain subdirectories for each supported language.  
+  
+Methods calls:  
+*__.laSelector(laDefault, dir, laListeFile);*  
+*dic = __.getDictionary(_dirLa, fileLa );*  
+  
+The *laSelector* method parameters:  
+-  *laDefault* - string, defines the iso2 code of the first language;  
+-  *dir* - string or null, defines the language directory, default is "languages";  
+-  *laListeFile* - string or null, specifies the name of a file containing a  
+  list of supported languages, by default "selLanguages.txt";  
+  
+The *getDictionary* method parameters:  
+- _dirLa - string, see above;  
+- fileLa - string  or null, by default "dictionary.txt"  
+  
+The *getDictionary* method creates object, as an example for this section:  
+
+```js
+dic =
+{
+  "info":"On April 23, 1516, the Bavarian Duke Wilhelm IV issued a purity law
+
+about the purity of the beer, which has applied throughout Germany since 1919.
+The Purity Law states that it is permitted for the preparation of beer
+only with <b>malt, hops, yeast and water</b>.",
+
+"question":"Do you like Bavarian beer?",
+"buttons":
+  [
+    0:"yes",
+    1:"no",
+    2:"didn't try"
+  ]
+}
+
+```
+  
+Example 
+```html
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript" src="CompactDOM.min.js"></script>
+<title>Demo for laSelector method</title>
+<script>
+//define the variables _la, _dirLa for the current language
+//iso2 code of the first language - "en"(english)
+__.laSelector("en");
+//define the dic object
+dic = __.getDictionary(_dirLa);
+__.ready(()=>{
+//include CSS
+__.link("css/laSelectorDemo.css,../css/modal.css,../css/selLanguages.css");
+//create one div element in the body with content from dic.info
+__.create(dic.info, {tag:"div", class:"info"});
+//create the div2 div element in the body with
+div2 = __.create(1, {tag:"div", class:"info"});
+//create one h3 element in the div2 with content from dic.question
+div2.create(dic.question, {tag:"h3"});
+//create 3 button element in the div2 with content from array dic.buttons
+div2.create(dic.buttons, {tag:"button"});
+//create  html-code for modal window
+__.modal();
+//create modal html-code for language selector
+__.laSelector();
+});
+</script>
+</head>
+<body>
+</body>
+</html>
+```
+
+  
+  
+[Try it](https://www.alto-booking.com/developer/CompactDOM/sections/laSelectorDemo.html)  
+## 4.12 Arraybufer methods  
+## 4.12.1 Method setToArrBuf  
      
  This method is used to pack the originalData into an arraybuffer-object according to the  
   ArrayType ([JavaScript typed arrays](https://developer.mozilla.org/de/docs/Web/JavaScript/Typed_arrays)).  
@@ -8882,7 +9298,7 @@ function clearPrevious(){
 
   
   
-## 4.9.2 Method getArrayType  
+## 4.12.2 Method getArrayType  
      
  This method can be used to determine the ArrayType ([JavaScript typed arrays](https://developer.mozilla.org/de/docs/Web/JavaScript/Typed_arrays)) based on the number of  
 bytes required to properly pack the originalData into arraybufer-object.  
@@ -8901,7 +9317,7 @@ Specifies the number of bytes required to properly pack each character from the 
 Number *1* will be interpreted as Uint8Array, *2* as Uint16Array, *4* as Uint32Array.  
   
 See the *setToArrBuf* method section for examples of how to use this method.  
-## 4.9.3 Method getFromArrBuf  
+## 4.12.3 Method getFromArrBuf  
      
  This method is used to unpack the original data from the arraybuffer-object according to  
   ArrayType ([JavaScript typed arrays](https://developer.mozilla.org/de/docs/Web/JavaScript/Typed_arrays)).  
@@ -8931,78 +9347,8 @@ The *getArray* parameter is boolean or empty. If getArray is true, the method re
 a numeric array, otherwise a string.  
   
 See the *setToArrBuf* method section for examples of how to use this method.  
-## 4.9.4 Method setBlob  
-     
- This method is used to pack the originalData into an [blob-object](https://developer.mozilla.org/en-US/docs/Web/API/Blob).  
-  
-*blobObject = __.setBlob(originalData, MIME_Type);*  
-  
-originalData:  
-- text;  
-- binary data;  
-  
-The example below will use:  
-- *link* method to include *content.css* css-file;  
-- *create* method;  
-- *content* method;  
-  
-Example for originalData - 'Hello World!' and MIME type - 'text/plain'.  
-In this example, the setBlob method converts data with a 'text/plain' mime type into a blob-object.  
-The myFunction function converts a blob-object to a string.
-
-```html
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<script type="text/javascript" src="CompactDOM.min.js"></script>
-<title>HTML Document</title>
-</head>
-<body>
-<button id="_1">
-<div>demo with originalData = 'Hello World!' and MIME_Type = 'text/plain'</div>
-<p>
-blobObject = __.setBlob('Hello World!', 'text/plain');
-myFunction(blobObject);
-</p>
-</button>
-<div id="contF">
-</div>
-<div id="cont" class="cont rb">
-</div>
-</body>
-<script>
-__.link("sections/css/content.css");
-cont = _("#cont");
-contF = _("#contF");
-myFunction = function(blobObject){
-  console.log(blobObject);
-  reader = new FileReader();
-  reader.addEventListener('loadend', (e) => {
-  text = e.srcElement.result;
-  cont.content(text);
-  });
-  reader.readAsText(blobObject);
-};
-//buttons events handler
-EventHandlerFunction = function(){
-  _(this).css("height:30px");
-  clearPrevious();
-  code=_("#"+this.id+" p").content();
-  eval(code);
-}
-_("button").click(EventHandlerFunction);
-function clearPrevious(){
-  cont.content("");
-  contF.content("");
-}
-</script>
-</html>
-```
-
-  
-  
-### 4.10 Check type methods  
-## 4.10.1 Check type method a - array  
+## 4.13 Check type methods  
+## 4.13.1 Check type method a - array  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9119,7 +9465,7 @@ showResult=function(method){
 
   
   
-## 4.10.2 Check type method b - boolean  
+## 4.13.2 Check type method b - boolean  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9236,7 +9582,7 @@ showResult=function(method){
 
   
   
-## 4.10.3 Check type method f - function  
+## 4.13.3 Check type method f - function  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9353,7 +9699,7 @@ showResult=function(method){
 
   
   
-## 4.10.4 Check type method n - number  
+## 4.13.4 Check type method n - number  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9470,7 +9816,7 @@ showResult=function(method){
 
   
   
-## 4.10.5 Check type method o - object  
+## 4.13.5 Check type method o - object  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9587,7 +9933,7 @@ showResult=function(method){
 
   
   
-## 4.10.6 Check type method s - string  
+## 4.13.6 Check type method s - string  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9704,7 +10050,7 @@ showResult=function(method){
 
   
   
-## 4.10.7 Check type method u - undefined  
+## 4.13.7 Check type method u - undefined  
      
    This method checks the datatype of the parameter. If the method name matches the datatype  
 of the parameter, the method return true, otherwise false.  
@@ -9821,8 +10167,8 @@ showResult=function(method){
 
   
   
-# 5. Appendixs
-## 5.1 Codes for this site
+## 5. Appendixs  
+## 5.1 Codes for this site  
 ## 5.1.1 index.html  
   
 ```html  
@@ -9955,10 +10301,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			"POST XMLHttpRequest":"send3.html",
 			"PUT XMLHttpRequest":"send4.html",
 			"GET XMLHttpRequest":"send5.html",
-			"DELETE XMLHttpRequest":"send6.html"
+			"DELETE XMLHttpRequest":"send6.html",
+			"Synchronous XHR":"send7.html"
 		}
-	},
-	
+	},	
 	"Auxiliary methods":
 	{
 		"ads":"ads.html",	
@@ -9969,12 +10315,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		"sid":"sid.html",
 		"sob":"sob.html",
 		"url":"url.html",
+		"setBlob":"setBlob.html",
+		"laSelector":"laSelector.html",
+		"getDictionary":"getDictionary.html",
 		"Arraybufer methods":
 		{
 			"setToArrBuf":"setToArrBuf.html",
 			"getArrayType":"getArrayType.html",
-			"getFromArrBuf":"getFromArrBuf.html",
-			"setBlob":"setBlob.html"			
+			"getFromArrBuf":"getFromArrBuf.html"			
 		},
 		"Check type methods":
 		{
@@ -9995,7 +10343,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			"index.html":"../index.html?code=html",
 			"index.json":"../index.json?code=json",
 			"index.js":"index_js.html",
-			"index.css":"../css/index.css?code=css"
+			"index.css":"../css/index.css?code=css",
+			"modal.css":"../css/modal.css?code=css",
+			"selLanguages.css":"../css/selLanguages.css?code=css"
+			
 		},		
 		"Files in examples":
 		{
@@ -10764,7 +11115,71 @@ canvas{
   pointer-events:none;   
 }  
 ```  
-# 5.2 Files in examples
+## 5.1.5 modal.css  
+  
+```css  
+.modal{
+	position:absolute;
+	z-index:9999;
+	top:0;
+	left:0;
+	background-color: #ffffff;
+	border: 1px solid #85A0C9;
+	border-radius: 5px;
+	box-shadow:3px 3px 3px rgba(0, 0, 0, 0.5);	
+}
+
+.modal_content{	
+	display:table-cell;
+	text-align:center;
+	padding:40 20 20 20;
+	font-size:14pt;	
+}
+
+.modal_close{
+	font-family: Courier;
+	color:#aaa;
+	cursor:pointer;
+	font-size:50px;
+	position:absolute;
+	right:0px;
+	top:0px;
+	margin:-0.2em 0.3em 0 0;
+	caret-color:transparent;
+	width: 20px;
+}
+
+.modal_close:hover
+{color:#FFCCD9;caret-color:transparent;}
+
+.modal_gray_layer{
+	z-index: 9998;
+	position:fixed;
+	top:0px;
+	left:0px;
+	right: 0px;
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.1);
+	display:none;
+}  
+```  
+## 5.1.6 selLanguages.css  
+  
+```css  
+.selLa{
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  font-size: 16px
+}
+.contModalLa{padding:0px 20px 10px 20px}
+.contModalLa p{margin:0px 10px 0px 10px;line-height: 40px}
+.selLa p, .contModalLa p{display: inline-block}
+.selLa p,.contModalLa p[data]{cursor: pointer}
+.selLa p:hover,.contModalLa p[data]:hover{text-decoration: underline}
+.selLa i{font-size: 12px; font-style:normal}  
+```  
+## 5.2 Files in examples  
 ## 5.2.1 GetResponse.php  
      
   
@@ -10918,7 +11333,7 @@ label input{margin-left:5px}
 <p><b>send</b> method sends XMLHttpRequest: <br>
 <b>sections/content.txt</b><p>  
 ```  
-# 5.3 CSS
+## 5.3 CSS  
 ## 5.3.1 CSS for scroll method  
      
 See above  *scroll* method.
@@ -11034,7 +11449,7 @@ _pcy = "center-x";
 _und = undefined;
 ```
   
-# 5.5 CompactDOM projects
+## 5.5 CompactDOM projects  
 ## 5.5.1 CaesarCipher.js  
      
 
@@ -11621,7 +12036,6 @@ __.ready( () => {
 ## 5.5.4 CrossPoint.js  
      
 
-<div></div>
 
 ```html
 <script>
@@ -11645,9 +12059,15 @@ https://github.com/VladimirKheifets/Java-Script-library-CompactDOM
 
 */
 
-__.ready(() => {
+__.laSelector("en");
+dic = __.getDictionary(_dirLa);
+//---------------------------------
+  __.ready(() => {
+  Env = __.env();
+  __.on(Env.eor, ev => { __.reload();});
+  //------------------------------------------------
   head = _("head");
-  title = "Calculate crossing point of two straight lines or line segments";
+  title = dic.title;
   head.create( title, {tag:"title"} );
   head.create(1,{ tag:"meta", charset:"utf-8" });
   head.create(1,
@@ -11656,20 +12076,18 @@ __.ready(() => {
     name:"viewport",
     content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0"
   });
-  __.link("css/index.css,css/modal.css,css/button_to_up.css");
+  __.link("css/index.css,css/modal.css,css/button_to_up.css,css/selLanguages.css");
   ctx = [];
   lay = [];
   lines = {};
   inp = _("input");
   lab = _("label");
-  Env = __.env();
-  //------------------------------------------------
-  __.on(Env.eor, ev => { __.reload();});
+
   //------------------------------------------------
   colors = {1:"blue", 2:"purple", 3:"red"};
-  canvasWidthD = [300,400,500,600,860];
+  canvasWidthD = [300,500,500,600,860];
   canvasHeightD = [300,300,300,400,400];
-  //alert(whU["w"]+"/"+Win+"\n"+whU["h"]+"/"+Hin + "/"+ idd);
+  Env = __.env();
   canvasWidth = canvasWidthD[Env.dev];
   canvasHeight = canvasHeightD[Env.dev];
   gridCell = 10;
@@ -11699,6 +12117,9 @@ __.ready(() => {
   });
 
 
+ labContent=dic.switch.concat(dic.switch);
+ _("label").each((el,ind)=>{el.content(labContent[ind])});
+
   //-- footer -------------------------------------------------------
   d = new Date();
   year = d.getFullYear();
@@ -11709,28 +12130,26 @@ __.ready(() => {
 
   nav = __.create(1, {tag:"nav"});
   nav.create(
-    [
-      "Help",
-      "On/Off grid",
-      "Calculate with JS",
-      "Calculate with PHP",
-      "AJAX Request/Response",
-      "Data structure",
-      "Clear"
-    ],
+    dic.button,
     {
       tag:"button",
       id:"but"
     }
   );
 
+  navCSS = "top:"+(_("header").position().top+10)+"px";
+  nav.css(navCSS);
   navHide = () =>{if(Env.dev<3) nav.hide();};
+  res = __.create(1,{tag:"p"});
+  res.css("height:55px");
+  res.hide(100);
   if(Env.dev < 3)
   {
     menu  = main.create(1, {add:"after",tag:"div", id:"menu"});
-    menu.include("menu.html");
-
+    fileName=(Env.tou?"menuts":"menu")+".html";
+    menu.include(fileName);
     nav.hide();
+    res.css(navCSS);
     menu.click(()=>{
       if(nav.ishide())
         nav.show();
@@ -11740,12 +12159,6 @@ __.ready(() => {
         res.hide(100);
     });
   }
-  res = __.create(1,{tag:"p"});
-  res.css("height:55px");
-  res.hide(100);
-
- navHide = () =>{if(Env.dev<3) nav.hide();};
-
 
   i=1;
   while(i<3)
@@ -11774,9 +12187,6 @@ __.ready(() => {
     el.css("z-index:" + ind);
   });
 
-  navCSS = "top:"+(_("header").position().top+10)+"px";
-  nav.css(navCSS);
-
   startSetting = () => {
     pXY = {
       width: canvasWidth,
@@ -11802,8 +12212,6 @@ __.ready(() => {
     });
     res.css("opacity:0");
   };
-
-
 
   showLineSelector = (iL) => {
     inpEl = {1:[0,1], 2:[2,3]};
@@ -12031,10 +12439,10 @@ __.ready(() => {
          clearCanvas(ctx[ind]);
          drawingPoint(ctx[ind], pXY[ind]["Xa"], pXY[ind]["Ya"], colors[ind]);
          drawingLine(ctx[ind], pXY[ind]["Xa"], pXY[ind]["Ya"], x, y, colors[ind]);
-         contP = "end point: ";
+         contP = dic.points[1] + ": ";
       }
       else
-        contP = " start point: ";
+        contP = " "+dic.points[0]+": ";
       lines[ab+ind].content(contP + "x = "+Xd+", y = "+Yd);
     }
   });
@@ -12099,30 +12507,16 @@ __.ready(() => {
   };
 
   printInfo = (rsp) => {
+    txt=dic.structure;
       var   out = "<div>";
       if(rsp)
       {
-        out += "JSON-Request";
-        out += "<br>&nbsp;<br>";
+        out += txt[0];
       }
-      out += "Keys of line segments and straight lines: 1,2";
-      out += "<br>Start point 'a', end point 'b':";
-      out += "<br>Xa,Ya, Xb,Yb - absolute coordinates";
-      out += "<br>Xad,Yad, Xbd,Ybd - cartesian coordinates";
-      out += "<br>Key 'line' - coordinates of line<br>or empty object";
-      out += "<br>Keys 'width', 'height' - width and height ";
-      out += "<br>of the rectangle (canvas) bounding the plane";
+      out += txt[1];
       if(rsp)
       {
-        out += "<br>&nbsp;<br>";
-        out += "<br>JSON-Response<br>";
-        out += "&nbsp;<br>";
-        out += "Key crossPointCheck:<br>";
-        out += "true - crossing point found,<br>";
-        out += "false - crossing not found<br>";
-        out += "Crossing point coordinates:<br>";
-        out += "X,Y - absolute coordinates<br>";
-        out += "Xd,Yd - cartesian coordinates<br>";
+        out += txt[2];
       }
       out += "</div>";
       return out;
@@ -12136,7 +12530,7 @@ __.ready(() => {
       case 1:
       obj=
       {
-        url:"help.html",
+        url:_dirLa+"/help.html",
         method:"get",
         func:(rsp) => {
          __.modal(rsp);
@@ -12234,14 +12628,12 @@ __.ready(() => {
   startSetting();
   __.modal();
   __.scroll();
+  __.laSelector();
  });
-</script>
+ </script>
 ```
 
   
-  
-</code>  
-</pre>  
 ## 5.5.5 DeviceCheck.js  
      
 
@@ -12268,10 +12660,17 @@ https://github.com/VladimirKheifets/Java-Script-library-CompactDOM
 
 */
 
+__.laSelector("en");
+rsp = __.send(
+  {
+    url:_dirLa+"/dictionary.json",
+    method:"get",
+    async:false
+  });
+dic = JSON.parse(rsp);
 __.ready(() => {
   env = __.env();
   __.on(env.eor, e => {__.reload()});
-  getDictionary = (dic) => {
     head = _("head");
     body = _("body");
     head.create( dic[0], {tag:"title"} );
@@ -12282,11 +12681,14 @@ __.ready(() => {
       name:"viewport",
       content:"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, user-scalable=0"
     });
-    __.link("css/index.css,css/modal.css,css/button_to_up.css");
+    __.link("css/index.css,css/modal.css,css/button_to_up.css,css/selLanguages.css");
 
     header = body.create(1, {tag:"header"});
     header.create(dic[0], {tag:"h1"});
     main = body.create(1,{tag:"main"});
+    //-------------------------------------------------------------------
+    __.laSelector();
+    //-------------------------------------------------------------------
     show = main.create(1,{tag:"div"});
     d = new Date();
     year = d.getFullYear();
@@ -12294,7 +12696,8 @@ __.ready(() => {
     main.create(footer, { add:"after", tag:"footer"} );
     S = ["<br>", "&nbsp;", ": ", ", ","px"];
     S[5] = S[1].repeat(3);
-    showDeviceInfo = (env, dic) => {
+    showDeviceInfo = (dic) => {
+      env = __.env();
       msg = dic[5][env.dev]+S[0];
       ori = (env.opo)?2:1;
       YN = env.tou?3:4;
@@ -12302,29 +12705,19 @@ __.ready(() => {
       YN = env.sor?3:4;
       msg += dic[2][0]+S[1]+dic[2][1]+S[2]+dic[2][YN]+S[5]+S[0];
       msg += dic[1][0]+S[2]+dic[1][ori]+S[0];
-      if(env.sor)
-       msg +=  dic[2][5]+S[0];
+      if(env.sor) msg +=  dic[2][5]+S[0];
       msg += dic[3][0]+S[2]+dic[3][2]+S[1]+env.wsc+S[4]+S[3]+dic[3][3]+S[1]+env.hsc+ S[4]+S[0];
       msg += dic[3][1]+S[2]+dic[3][2]+S[1]+env.wbr+S[4]+S[3]+dic[3][3]+S[1]+env.hbr+ S[4]+S[0];
+      //e=document.documentElement;
+      //msg += dic[3][1]+S[2]+dic[3][2]+S[1]+e.clientWidth+S[4]+S[3]+dic[3][3]+S[1]+e.clientHeight+ S[4]+S[0];
       msg += dic[4]+S[2]+S[0]+env.usa;
       show.content(msg);
     }
-    showDeviceInfo(env, dic);
-};
-__.send(
-  {
-    url:"dictionary/en.json",
-    method:"get",
-    requestType:"json",
-    responseType:"json",
-    func:getDictionary
-  });
-__.modal();
-__.scroll();
+    showDeviceInfo(dic);
+  __.modal();
+  __.scroll();
 });
 </script>
 ```
 
   
-</code>  
-</pre>  
