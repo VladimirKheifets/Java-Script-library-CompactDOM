@@ -12041,7 +12041,7 @@ __.ready( () => {
 <script>
 /*
 
-CrossPoin
+CrossPoint
 
 CompactDOM script
 
