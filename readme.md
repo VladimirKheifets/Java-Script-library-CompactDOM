@@ -1,10 +1,10 @@
 # Java Script library CompactDOM 
 
-### Version: 2.1, 2022-01-31
+### Version: 3.1, 2026-05-12
 
 Author: Vladimir Kheifets <kheifets.vladimir@online.de>
 
-Copyright &copy; 2022 Vladimir Kheifets All Rights Reserved  
+Copyright &copy; 2025 Vladimir Kheifets All Rights Reserved
 ## Contents  
 ## 1. Preface  
 1.1 About CompactDOM tutorial  
@@ -2934,7 +2934,11 @@ the *Classes* parameter can contain one or several identifiers of CSS-classes se
 by spaces (multi class). If the *Set* parameter is *true*, then the method complements these   
 identifiers into the attribute class of the element, otherwise it removes those that were  
 previously defined. As a result, the class attribute will contain only unique identifiers  
-or may be empty.   
+or may be empty.
+
+- parameter *Classes can contain only one identifiers of CSS-class*, parameter *Set is undefined* -
+in this case, In this case, the class specified as the first parameter is defined in *classList*,
+the method returns *true*, otherwise, it returns *false*.
   
 - *both parameters are undefined* - in this case, the method returns   
 the actual state  of the class attribute.   
@@ -3007,9 +3011,9 @@ _("button").click(EventHandlerFunction);
 ## 3.6 Method content  
      
 This method sets or returns the HTML content of an element.  
-Contet method is not applicable  for NodeList.  
+Content method is not applicable  for NodeList.
   
-*_(selector).contet(Content)*;  
+*_(selector).content(Content)*;
   
  The functionality of the method depends on the specified parameter. The following cases are allowed:    
   
